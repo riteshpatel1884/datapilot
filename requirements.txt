@@ -1,0 +1,6 @@
+sqlglot
+langchain
+langchain-core
+langchain-groq
+langchain-chroma
+chromadb
