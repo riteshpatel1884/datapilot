@@ -1,27 +1,83 @@
-"""
-RAG Layer (replaces the old keyword-match schema_retriever.py)
 
-Two things get embedded and stored in Chroma:
+
+
+"""
+RAG Layer — Qdrant version (replaces the earlier Chroma implementation).
+
+Two things get embedded and stored:
   1. Schema docs — one doc per table (name + columns + sample rows)
   2. Few-shot NL->SQL examples — from few_shot_examples.py
 
 At query time we retrieve top-k of each via similarity search and
 stuff only the relevant pieces into the LLM prompt, instead of
 dumping the whole schema + every example every time.
+
+Connection modes (chosen automatically):
+  - QDRANT_URL set        -> connects to a remote/managed Qdrant instance
+                              (e.g. Qdrant Cloud). Set QDRANT_API_KEY too
+                              if the instance requires one. Use this for
+                              any real deployment — hosting platforms
+                              generally wipe local disk on redeploy, so
+                              local-mode storage below won't survive.
+  - QDRANT_URL not set     -> falls back to local on-disk Qdrant at
+                              ../qdrant_store (embedded, no server needed).
+                              Fine for local dev, same convenience Chroma
+                              had via persist_directory.
+
+Note on local mode + `uvicorn --reload`: Qdrant's local/embedded mode
+holds a file lock on the storage directory, and only one QdrantClient
+process-wide can hold it at a time. This file caches a single shared
+client and reuses it for both collections, which fixes the "already
+accessed by another instance" error you'd otherwise get from building
+two clients on the same path. The remaining case where you can still
+hit that error is a SEPARATE process (e.g. your uvicorn server) already
+running and holding the lock while you try to run this file directly —
+stop that process first, or delete the local qdrant_store/ folder if a
+lock persists after a crashed run.
 """
 import os
 import sqlite3
-from langchain_chroma import Chroma
+
 from langchain_core.documents import Document
+from langchain_qdrant import QdrantVectorStore
+from qdrant_client import QdrantClient
+from qdrant_client.http.models import Distance, VectorParams
 
 from schema.embeddings import get_embeddings
 from schema.few_shot_examples import FEW_SHOT_EXAMPLES
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "sample.db")
-PERSIST_DIR = os.path.join(os.path.dirname(__file__), "..", "chroma_store")
+LOCAL_QDRANT_PATH = os.path.join(os.path.dirname(__file__), "..", "qdrant_store")
 
+QDRANT_URL = os.environ.get("QDRANT_URL")
+QDRANT_API_KEY = os.environ.get("QDRANT_API_KEY")
+
+SCHEMA_COLLECTION = "schema_docs"
+EXAMPLES_COLLECTION = "example_docs"
+
+# IMPORTANT: local/embedded Qdrant only allows ONE client to hold the
+# storage folder's lock at a time. Building two separate clients on the
+# same path in one process (which from_documents() does if called
+# twice) throws "already accessed by another instance". So we cache and
+# reuse a single client for both collections instead.
+_client = None
 _schema_store = None
 _examples_store = None
+
+
+def _get_client() -> QdrantClient:
+    global _client
+    if _client is not None:
+        return _client
+    if QDRANT_URL:
+        kwargs = {"url": QDRANT_URL}
+        if QDRANT_API_KEY:
+            kwargs["api_key"] = QDRANT_API_KEY
+        _client = QdrantClient(**kwargs)
+    else:
+        os.makedirs(LOCAL_QDRANT_PATH, exist_ok=True)
+        _client = QdrantClient(path=LOCAL_QDRANT_PATH)
+    return _client
 
 
 def get_full_schema(db_path: str = DB_PATH) -> dict:
@@ -63,37 +119,59 @@ def _examples_to_documents(examples: list) -> list:
     return docs
 
 
+def _ensure_collection(client: QdrantClient, name: str, vector_size: int, recreate: bool = False):
+    exists = client.collection_exists(name)
+    if recreate and exists:
+        client.delete_collection(name)
+        exists = False
+    if not exists:
+        client.create_collection(
+            collection_name=name,
+            vectors_config=VectorParams(size=vector_size, distance=Distance.COSINE),
+        )
+
+
 def build_stores(force_rebuild: bool = False):
-    """Builds (or loads persisted) Chroma vectorstores for schema + examples."""
+    """
+    Builds (or recreates) the Qdrant collections for schema + examples,
+    using ONE shared client for both. force_rebuild=True drops and
+    repopulates both collections — use this whenever the underlying DB
+    schema or the few-shot corpus changes. With force_rebuild=False,
+    existing non-empty collections are left as-is (no re-embedding on
+    every restart); only genuinely missing/empty collections get
+    populated.
+    """
     global _schema_store, _examples_store
 
     embeddings = get_embeddings()
-
-    if force_rebuild and os.path.exists(PERSIST_DIR):
-        import shutil
-        shutil.rmtree(PERSIST_DIR)
+    vector_size = len(embeddings.embed_query("dimension probe"))
+    client = _get_client()
 
     schema = get_full_schema()
     schema_docs = _schema_to_documents(schema)
     example_docs = _examples_to_documents(FEW_SHOT_EXAMPLES)
 
-    _schema_store = Chroma.from_documents(
-        schema_docs, embeddings,
-        collection_name="schema_docs",
-        persist_directory=os.path.join(PERSIST_DIR, "schema"),
-    )
-    _examples_store = Chroma.from_documents(
-        example_docs, embeddings,
-        collection_name="example_docs",
-        persist_directory=os.path.join(PERSIST_DIR, "examples"),
-    )
+    _ensure_collection(client, SCHEMA_COLLECTION, vector_size, recreate=force_rebuild)
+    _ensure_collection(client, EXAMPLES_COLLECTION, vector_size, recreate=force_rebuild)
+
+    _schema_store = QdrantVectorStore(client=client, collection_name=SCHEMA_COLLECTION, embedding=embeddings)
+    _examples_store = QdrantVectorStore(client=client, collection_name=EXAMPLES_COLLECTION, embedding=embeddings)
+
+    schema_count = client.count(SCHEMA_COLLECTION).count
+    if force_rebuild or schema_count == 0:
+        _schema_store.add_documents(schema_docs)
+
+    examples_count = client.count(EXAMPLES_COLLECTION).count
+    if force_rebuild or examples_count == 0:
+        _examples_store.add_documents(example_docs)
+
     return _schema_store, _examples_store
 
 
 def get_stores():
     global _schema_store, _examples_store
     if _schema_store is None or _examples_store is None:
-        build_stores()
+        build_stores(force_rebuild=False)
     return _schema_store, _examples_store
 
 
@@ -105,8 +183,7 @@ def retrieve_context(query: str, k_schema: int = 3, k_examples: int = 3) -> dict
         "examples": [{"question": ..., "sql": ...}, ...],  # relevant few-shot examples
       }
 
-    k_schema / k_examples of 0 skip that retrieval entirely (Chroma
-    itself rejects k=0, so we short-circuit before calling it).
+    k_schema / k_examples of 0 skip that retrieval entirely.
     """
     schema_store, examples_store = get_stores()
 
@@ -134,3 +211,8 @@ if __name__ == "__main__":
     print("\n--- Retrieved examples ---")
     for ex in ctx["examples"]:
         print(ex["question"], "->", ex["sql"])
+
+    # Explicit cleanup so the interpreter doesn't try to close the
+    # client's file handle during shutdown (harmless but noisy
+    # "Exception ignored in QdrantClient.__del__" message otherwise).
+    _get_client().close()
