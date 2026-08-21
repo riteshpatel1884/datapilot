@@ -3,7 +3,7 @@ Streamlit UI for testing the text-to-SQL + clarification pipeline.
 
 Run:  uv run streamlit run app.pyy
 
-This is a thin UI layer only — all the real logic (guardrails,
+This is a thin UI layer only —- all the real logic (guardrails,
 classifier, RAG, generator, validator, executor, formatter) lives in
 pipeline.py and its step folders. This file just calls run_pipeline()
 and renders whatever comes back.
