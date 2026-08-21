@@ -1,7 +1,7 @@
 """
 Streamlit UI for testing the text-to-SQL + clarification pipeline.
 
-Run:  uv run streamlit run app.pyy
+Run:  uv run streamlit run app.py
 
 This is a thin UI layer only — all the real logic (guardrails,
 classifier, RAG, generator, validator, executor, formatter) lives in
