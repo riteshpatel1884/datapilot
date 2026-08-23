@@ -1,6 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
 sqlglot
 langchain
 langchain-core
 langchain-groq
-langchain-chroma
-chromadb
+langchain-qdrant
+qdrant-client
