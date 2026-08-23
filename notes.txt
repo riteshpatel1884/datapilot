@@ -1,1 +1,5 @@
-Notes
+Project Structure
+
+-> Frontend: Vercel
+-> BAckend - railway
+-> Repo - Github
