@@ -147,6 +147,35 @@ NON_DATA_PATTERNS = [
     r"^(hi|hello|hey|thanks|thank you)\W*$",
 ]
 
+# --- Off-topic / out-of-scope detection ---------------------------------
+# The classifier/generator will happily *try* to answer anything (weather,
+# essays, general chit-chat), burning two LLM calls before failing
+# downstream. These patterns catch obviously out-of-domain requests early,
+# at zero LLM cost, instead of letting them run the full pipeline first.
+
+OFF_TOPIC_PATTERNS = [
+    r"\bweather\b",
+    r"\bjoke\b",
+    r"\bpoem\b",
+    r"\brecipe\b",
+    r"\bessay\b",
+    r"\bwrite\s+(me\s+)?(a|an)\s+\d*\s*(word\s+)?(essay|article|story|poem|blog)",
+    r"\btranslate\b.{0,20}\b(to|into)\b",
+    r"\bwhat\s+is\s+the\s+capital\s+of\b",
+    r"\bwho\s+(won|is)\s+the\s+(election|president|prime\s+minister)\b",
+]
+
+# Terms that signal a question is plausibly ABOUT this app's data domain
+# (mall purchase data — customers and orders). If a query matches none of
+# these AND isn't obviously a short/simple data-shaped question, it's
+# treated as out-of-scope rather than spending an LLM call finding out.
+DOMAIN_HINT_TERMS = [
+    "customer", "customers", "order", "orders", "purchase", "purchases",
+    "revenue", "sales", "spend", "spent", "amount", "city", "category",
+    "categories", "item", "product", "signup", "membership", "date",
+    "table", "database", "record", "row", "column", "data", "query",
+]
+
 
 class GuardrailResult:
     def __init__(self, passed: bool, reason: str = ""):
@@ -188,6 +217,15 @@ def check_input(query: str) -> GuardrailResult:
         if re.match(pattern, lowered.strip()):
             return GuardrailResult(False, "This doesn't look like a data question")
 
+    # 4. Off-topic / out-of-scope — only blocks when an off-topic signal
+    # fires AND no domain-relevant term is present, so a question like
+    # "how did weather affect customer purchases" (mentions both) still
+    # goes through rather than getting wrongly blocked.
+    has_off_topic_signal = any(re.search(pattern, deobfuscated) for pattern in OFF_TOPIC_PATTERNS)
+    has_domain_hint = any(term in lowered for term in DOMAIN_HINT_TERMS)
+    if has_off_topic_signal and not has_domain_hint:
+        return GuardrailResult(False, "This doesn't look like a question about the mall purchase data")
+
     return GuardrailResult(True)
 
 
@@ -215,6 +253,11 @@ if __name__ == "__main__":
         # non-data
         "hello",
         "",
+        # off-topic — the new catch
+        "what's the weather like today?",
+        "can you write me a 2000 word essay about the history of retail",
+        # should still pass — mentions weather but is genuinely about the data
+        "how did weather affect customer purchases in December",
     ]
     for t in tests:
         print(f"{t!r:70} -> {check_input(t)}")
