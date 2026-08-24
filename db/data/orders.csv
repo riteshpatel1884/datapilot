@@ -1,0 +1,788 @@
+order_id,customer_id,item_name,category,quantity,amount,payment_method,order_date
+1,1,Kids Story Set,Books,1,1056.43,Credit Card,2026-05-01
+2,1,Sports Sneakers,Footwear,1,3648.92,UPI,2026-04-03
+3,1,Hair Care Combo,Beauty,3,1179.52,Credit Card,2026-03-07
+4,1,Formal Shirt,Fashion,2,1132.14,Credit Card,2026-08-04
+5,1,Scented Candle Set,Home Decor,2,982.84,Net Banking,2026-01-12
+6,1,Skincare Set,Beauty,3,1454.83,UPI,2026-05-18
+7,1,Laptop Sleeve,Electronics,3,936.06,Debit Card,2025-11-21
+8,1,Cookbook,Books,3,555.98,Net Banking,2026-03-07
+9,1,Fiction Novel,Books,2,573.89,UPI,2025-12-07
+10,2,Scented Candle Set,Home Decor,2,721.92,Debit Card,2025-11-13
+11,2,Sports Sneakers,Footwear,2,4827.25,Debit Card,2025-09-11
+12,2,Puzzle Set,Toys,1,628.76,UPI,2026-03-21
+13,2,Sports Sneakers,Footwear,3,5250.16,UPI,2025-09-22
+14,2,Pizza Slice Combo,Food Court,1,476.86,Cash,2025-12-05
+15,2,Grocery Basket - Weekly,Grocery,3,1282.44,Net Banking,2025-10-03
+16,2,Fiction Novel,Books,1,618.29,UPI,2025-09-13
+17,2,Casual Sandals,Footwear,1,776.82,Cash,2026-04-20
+18,2,Sneakers,Fashion,3,3657.76,Debit Card,2025-11-02
+19,2,Cushion Cover Set,Home Decor,1,899.65,Credit Card,2025-09-22
+20,2,Scarf,Fashion,1,555.09,Net Banking,2025-09-01
+21,2,Combo Meal,Food Court,1,445.09,Debit Card,2026-01-02
+22,3,Coffee & Snack,Food Court,2,387.51,Net Banking,2025-10-14
+23,3,Cushion Cover Set,Home Decor,3,1397.21,Cash,2025-12-23
+24,3,Remote Control Car,Toys,2,3131.68,Cash,2025-11-30
+25,3,Formal Shoes,Footwear,3,2987.66,Debit Card,2026-03-30
+26,3,Board Game,Toys,3,819.71,Debit Card,2026-07-13
+27,3,Organic Snack Pack,Grocery,1,529.82,Debit Card,2025-08-27
+28,3,Sneakers,Fashion,3,3630.4,Cash,2025-12-28
+29,3,Bluetooth Speaker,Electronics,2,3115.65,Credit Card,2025-10-28
+30,3,Cushion Cover Set,Home Decor,2,505.9,Cash,2026-03-24
+31,3,Wall Art Frame,Home Decor,2,1283.52,Cash,2026-01-12
+32,3,Power Bank,Electronics,3,1336.97,Debit Card,2026-01-28
+33,3,Ice Cream Tub,Food Court,3,494.22,Cash,2026-08-10
+34,3,Wireless Earbuds,Electronics,1,3428.25,Debit Card,2025-12-30
+35,3,Smartwatch,Electronics,1,4585.07,UPI,2026-01-03
+36,4,Scented Candle Set,Home Decor,2,1001.61,Credit Card,2026-04-16
+37,4,Combo Meal,Food Court,1,512.16,Debit Card,2026-02-25
+38,4,Scarf,Fashion,1,874.37,Debit Card,2026-08-08
+39,4,Running Shoes,Footwear,1,4250.41,Cash,2026-06-20
+40,4,Handbag,Fashion,2,4817.15,UPI,2025-08-30
+41,4,Self-Help Book,Books,3,602.95,Debit Card,2026-06-26
+42,4,Building Blocks Set,Toys,2,1452.29,Cash,2025-11-02
+43,5,Running Shoes,Footwear,3,4153.92,Credit Card,2026-04-21
+44,5,Building Blocks Set,Toys,3,1735.1,UPI,2026-08-02
+45,5,Hair Care Combo,Beauty,1,1161.52,UPI,2025-12-07
+46,5,USB-C Hub,Electronics,2,1304.07,Cash,2026-06-30
+47,5,Cookbook,Books,2,1065.85,Net Banking,2026-05-25
+48,5,Puzzle Set,Toys,3,578.92,UPI,2025-10-24
+49,5,Self-Help Book,Books,1,715.37,Cash,2026-04-03
+50,5,Sports Sneakers,Footwear,3,4494.47,UPI,2026-02-10
+51,6,Coffee & Snack,Food Court,1,195.46,UPI,2026-02-23
+52,6,Kids Story Set,Books,3,1104.26,Net Banking,2026-04-04
+53,7,Perfume,Beauty,3,1439.72,Cash,2026-01-27
+54,7,Perfume,Beauty,3,3133.71,Cash,2025-08-24
+55,8,Wireless Earbuds,Electronics,2,2382.71,Debit Card,2025-09-03
+56,8,Board Game,Toys,3,973.26,Cash,2026-02-28
+57,8,Makeup Kit,Beauty,2,1638.8,UPI,2026-04-07
+58,8,Remote Control Car,Toys,1,1477.51,Credit Card,2026-03-15
+59,8,Perfume,Beauty,3,1736.31,UPI,2025-12-19
+60,8,Makeup Kit,Beauty,1,2959.07,Debit Card,2026-03-25
+61,8,Self-Help Book,Books,3,451.13,Debit Card,2025-11-23
+62,8,Building Blocks Set,Toys,3,1966.58,Debit Card,2026-03-27
+63,8,Combo Meal,Food Court,3,555.45,Cash,2026-03-31
+64,9,Coffee & Snack,Food Court,1,196.09,Cash,2026-04-16
+65,9,Scarf,Fashion,2,339.21,Net Banking,2026-07-17
+66,9,Bluetooth Speaker,Electronics,3,1543.15,Credit Card,2026-03-21
+67,9,Running Shoes,Footwear,2,4041.64,Net Banking,2025-10-17
+68,9,Sports Sneakers,Footwear,2,4076.8,Net Banking,2026-03-24
+69,9,Scented Candle Set,Home Decor,1,854.9,Credit Card,2025-10-15
+70,9,Casual Sandals,Footwear,1,917.58,Debit Card,2026-06-04
+71,9,Grocery Basket - Weekly,Grocery,2,1066.11,Net Banking,2026-01-05
+72,9,Coffee & Snack,Food Court,2,158.16,UPI,2025-08-27
+73,10,Combo Meal,Food Court,2,490.58,Net Banking,2025-10-07
+74,10,Sports Sneakers,Footwear,1,2901.72,Debit Card,2025-09-26
+75,10,Remote Control Car,Toys,1,1364.24,Net Banking,2026-03-19
+76,10,Puzzle Set,Toys,3,374.61,Cash,2026-03-21
+77,10,Puzzle Set,Toys,3,562.66,Cash,2026-08-03
+78,10,Kids Story Set,Books,1,420.69,Net Banking,2025-09-12
+79,10,USB-C Hub,Electronics,2,1606.74,Credit Card,2025-11-01
+80,10,Dry Fruits Pack,Grocery,2,1018.96,Debit Card,2026-04-03
+81,10,Cushion Cover Set,Home Decor,2,1469.06,Cash,2026-02-26
+82,10,Kids Story Set,Books,1,936.11,Cash,2026-03-08
+83,10,Coffee & Snack,Food Court,2,315.65,Credit Card,2025-11-15
+84,10,Combo Meal,Food Court,2,360.08,Cash,2026-06-25
+85,10,Skincare Set,Beauty,3,1918.02,Cash,2025-12-30
+86,11,Formal Shoes,Footwear,2,3481.11,Cash,2025-10-07
+87,11,Bluetooth Speaker,Electronics,1,1814.23,Cash,2026-03-29
+88,12,Combo Meal,Food Court,3,260.1,Debit Card,2025-10-16
+89,12,Beverages Combo,Grocery,3,785.59,Credit Card,2026-01-27
+90,12,Running Shoes,Footwear,1,3722.78,Debit Card,2025-09-26
+91,12,Coffee & Snack,Food Court,2,277.22,Cash,2026-01-23
+92,12,Ice Cream Tub,Food Court,1,337.04,Debit Card,2026-02-08
+93,12,Perfume,Beauty,2,3619.28,UPI,2026-01-23
+94,12,Makeup Kit,Beauty,2,2623.15,Net Banking,2026-03-24
+95,12,Ice Cream Tub,Food Court,2,333.96,UPI,2026-02-28
+96,12,Hair Care Combo,Beauty,2,955.34,Debit Card,2026-05-19
+97,12,Wall Art Frame,Home Decor,2,1798.42,UPI,2026-08-01
+98,12,Pizza Slice Combo,Food Court,3,454.43,Debit Card,2025-09-24
+99,12,Combo Meal,Food Court,3,294.19,Credit Card,2026-03-07
+100,12,Combo Meal,Food Court,2,434.08,Debit Card,2026-08-16
+101,13,Grocery Basket - Weekly,Grocery,2,1598.13,Net Banking,2026-03-03
+102,13,Table Lamp,Home Decor,3,2518.35,Cash,2025-11-23
+103,13,Cookbook,Books,1,1197.91,Credit Card,2025-10-11
+104,13,Formal Shoes,Footwear,3,4493.05,Cash,2026-07-08
+105,13,Scarf,Fashion,1,680.25,Debit Card,2026-01-08
+106,13,Building Blocks Set,Toys,1,759.79,UPI,2026-03-26
+107,13,Cookbook,Books,3,616.46,Net Banking,2026-01-25
+108,13,Organic Snack Pack,Grocery,3,405.04,Net Banking,2026-02-09
+109,14,Sports Sneakers,Footwear,1,5694.9,Cash,2026-04-27
+110,14,Puzzle Set,Toys,1,453.2,UPI,2025-12-28
+111,14,Perfume,Beauty,2,1406.81,UPI,2025-10-27
+112,14,Scented Candle Set,Home Decor,2,765.47,Cash,2026-05-14
+113,14,Combo Meal,Food Court,3,333.02,Net Banking,2026-02-21
+114,14,Board Game,Toys,3,521.94,UPI,2026-02-02
+115,14,Phone Case,Electronics,3,819.04,Net Banking,2026-07-29
+116,14,Coffee & Snack,Food Court,1,343.94,UPI,2025-10-17
+117,14,Casual Sandals,Footwear,3,1345.07,Debit Card,2025-09-20
+118,14,Winter Coat,Fashion,2,5408.53,Credit Card,2026-01-10
+119,14,Self-Help Book,Books,2,345.07,Cash,2026-03-09
+120,14,Organic Snack Pack,Grocery,3,379.3,Net Banking,2026-02-17
+121,15,Remote Control Car,Toys,2,1791.03,UPI,2026-03-25
+122,15,Sneakers,Fashion,1,5851.57,Cash,2026-04-30
+123,15,Makeup Kit,Beauty,2,1089.64,UPI,2026-08-16
+124,15,Skincare Set,Beauty,3,1573.14,UPI,2025-09-13
+125,15,Scented Candle Set,Home Decor,1,486.68,Credit Card,2025-12-25
+126,15,Makeup Kit,Beauty,1,2822.04,Credit Card,2025-09-26
+127,15,Coffee & Snack,Food Court,1,312.31,Credit Card,2026-06-13
+128,15,Smartwatch,Electronics,1,7977.6,Debit Card,2026-07-05
+129,15,Perfume,Beauty,2,2288.21,Net Banking,2025-09-14
+130,15,Wall Art Frame,Home Decor,3,1839.58,Cash,2026-07-04
+131,16,Scented Candle Set,Home Decor,2,426.17,Cash,2026-05-04
+132,16,Ice Cream Tub,Food Court,1,456.64,UPI,2025-09-06
+133,16,Makeup Kit,Beauty,2,1027.16,Credit Card,2026-05-18
+134,16,Combo Meal,Food Court,3,481.97,Net Banking,2025-09-30
+135,16,Wireless Earbuds,Electronics,1,3860.38,Net Banking,2026-06-20
+136,16,Running Shoes,Footwear,3,4938.4,Net Banking,2026-05-09
+137,16,Casual Sandals,Footwear,1,994.27,Credit Card,2025-10-22
+138,16,Remote Control Car,Toys,3,3471.31,Debit Card,2026-04-17
+139,16,Winter Coat,Fashion,1,6399.02,UPI,2026-08-16
+140,16,Formal Shoes,Footwear,2,1842.61,Debit Card,2026-07-28
+141,16,Table Lamp,Home Decor,2,2316.76,UPI,2026-01-06
+142,17,Sneakers,Fashion,3,4015.35,Net Banking,2026-08-01
+143,17,Puzzle Set,Toys,1,686.0,Cash,2026-07-23
+144,17,Cushion Cover Set,Home Decor,2,1186.1,Cash,2025-08-24
+145,17,Denim Jacket,Fashion,1,2347.59,Debit Card,2026-07-21
+146,17,Board Game,Toys,3,880.9,UPI,2025-11-25
+147,17,Pizza Slice Combo,Food Court,3,339.67,Net Banking,2026-06-26
+148,17,Sports Sneakers,Footwear,1,4080.44,UPI,2026-01-24
+149,17,Pizza Slice Combo,Food Court,1,466.4,Cash,2026-03-16
+150,17,Kids Story Set,Books,1,699.44,Cash,2025-09-06
+151,17,Denim Jacket,Fashion,1,3214.01,Credit Card,2026-01-14
+152,18,Self-Help Book,Books,3,578.19,Net Banking,2025-11-09
+153,18,Fiction Novel,Books,3,434.86,Credit Card,2026-01-19
+154,18,Board Game,Toys,3,851.65,Debit Card,2025-12-07
+155,18,Dry Fruits Pack,Grocery,1,724.24,Net Banking,2026-02-25
+156,18,Fiction Novel,Books,3,593.17,Cash,2026-04-30
+157,18,Skincare Set,Beauty,3,1835.29,UPI,2025-09-02
+158,18,Bluetooth Speaker,Electronics,2,1828.52,UPI,2026-03-03
+159,18,Bluetooth Speaker,Electronics,3,3200.68,Cash,2025-09-21
+160,18,Cotton T-Shirt,Fashion,1,992.78,Net Banking,2026-07-08
+161,18,Sports Sneakers,Footwear,2,3969.41,UPI,2026-06-04
+162,18,Board Game,Toys,3,1276.84,Credit Card,2025-10-22
+163,18,Bluetooth Speaker,Electronics,3,1562.04,Credit Card,2026-07-29
+164,18,Puzzle Set,Toys,2,697.16,Cash,2025-10-17
+165,19,Remote Control Car,Toys,1,2936.37,Cash,2026-02-28
+166,19,Formal Shirt,Fashion,3,1781.68,Net Banking,2025-12-17
+167,19,Building Blocks Set,Toys,3,986.67,Credit Card,2026-07-26
+168,19,Formal Shoes,Footwear,1,4352.38,UPI,2026-04-15
+169,19,Fiction Novel,Books,3,253.48,Debit Card,2026-01-15
+170,19,Dry Fruits Pack,Grocery,1,1032.58,Net Banking,2025-12-10
+171,19,Fiction Novel,Books,3,428.68,Cash,2026-08-02
+172,19,Power Bank,Electronics,2,2097.51,Cash,2025-11-02
+173,20,Cushion Cover Set,Home Decor,2,789.52,UPI,2026-08-13
+174,20,Dry Fruits Pack,Grocery,2,1332.03,Cash,2026-07-09
+175,20,Cotton T-Shirt,Fashion,2,748.54,Credit Card,2025-11-28
+176,20,Scented Candle Set,Home Decor,1,996.64,Debit Card,2026-03-06
+177,20,Handbag,Fashion,3,3716.29,Debit Card,2025-12-05
+178,20,Kids Story Set,Books,3,981.9,Debit Card,2026-06-09
+179,20,Cotton T-Shirt,Fashion,1,604.77,Debit Card,2025-10-19
+180,20,Cotton T-Shirt,Fashion,3,1161.03,Cash,2025-12-14
+181,20,Coffee & Snack,Food Court,3,366.06,Debit Card,2026-03-15
+182,20,Combo Meal,Food Court,3,414.12,UPI,2026-03-21
+183,20,Smartwatch,Electronics,2,5290.35,Cash,2025-12-30
+184,21,Smartwatch,Electronics,1,7074.33,Credit Card,2025-09-27
+185,21,Hair Care Combo,Beauty,3,962.71,Cash,2026-08-02
+186,22,Formal Shoes,Footwear,3,3433.52,Credit Card,2026-06-07
+187,22,Combo Meal,Food Court,2,533.84,Net Banking,2026-07-11
+188,22,Grocery Basket - Weekly,Grocery,2,1221.16,Net Banking,2026-01-11
+189,22,Perfume,Beauty,2,2218.91,Cash,2026-02-06
+190,22,Fiction Novel,Books,3,605.15,Credit Card,2026-03-05
+191,22,Fiction Novel,Books,2,501.08,UPI,2026-03-31
+192,22,Beverages Combo,Grocery,3,457.05,UPI,2026-06-12
+193,22,Puzzle Set,Toys,3,377.37,UPI,2026-07-11
+194,22,Hair Care Combo,Beauty,2,1143.49,Net Banking,2026-06-19
+195,22,Winter Coat,Fashion,3,5517.05,Credit Card,2026-02-19
+196,22,Kids Story Set,Books,1,544.21,Cash,2026-03-02
+197,22,Casual Sandals,Footwear,1,1799.97,UPI,2026-07-15
+198,22,Handbag,Fashion,3,4198.06,Credit Card,2025-11-27
+199,22,Self-Help Book,Books,1,598.62,Debit Card,2026-06-01
+200,23,Dry Fruits Pack,Grocery,2,543.69,Debit Card,2025-09-11
+201,23,Coffee & Snack,Food Court,2,338.1,Net Banking,2026-04-26
+202,23,Formal Shoes,Footwear,2,4407.11,UPI,2026-05-16
+203,23,Pizza Slice Combo,Food Court,2,607.78,Net Banking,2025-12-09
+204,23,Wall Art Frame,Home Decor,3,1743.65,UPI,2026-06-14
+205,23,Laptop Sleeve,Electronics,2,980.59,Credit Card,2025-11-13
+206,23,Skincare Set,Beauty,1,1284.61,Cash,2026-04-06
+207,23,Perfume,Beauty,1,3526.93,Cash,2026-05-02
+208,23,Fiction Novel,Books,2,436.7,UPI,2025-12-09
+209,23,Sports Sneakers,Footwear,2,5980.84,Credit Card,2026-05-01
+210,23,Fiction Novel,Books,3,627.63,Debit Card,2026-03-05
+211,23,Grocery Basket - Weekly,Grocery,2,1287.69,Debit Card,2025-09-01
+212,23,Pizza Slice Combo,Food Court,1,546.14,UPI,2026-08-14
+213,23,Casual Sandals,Footwear,3,1258.57,Net Banking,2025-10-16
+214,23,Table Lamp,Home Decor,1,2374.73,Credit Card,2026-03-22
+215,24,Sports Sneakers,Footwear,3,4736.33,Credit Card,2026-01-01
+216,24,Scarf,Fashion,3,843.09,Credit Card,2025-11-22
+217,25,Perfume,Beauty,2,3211.92,Credit Card,2026-01-16
+218,25,Self-Help Book,Books,1,585.33,Credit Card,2025-09-17
+219,25,Makeup Kit,Beauty,3,1042.13,Net Banking,2025-11-18
+220,25,Skincare Set,Beauty,2,1463.77,Cash,2026-08-01
+221,25,Kids Story Set,Books,2,997.85,UPI,2026-07-20
+222,25,Running Shoes,Footwear,3,4745.95,Debit Card,2026-03-06
+223,25,Smartwatch,Electronics,3,5503.08,Cash,2026-05-26
+224,25,Ice Cream Tub,Food Court,1,443.45,Credit Card,2026-01-01
+225,25,Remote Control Car,Toys,1,1300.75,UPI,2026-08-02
+226,25,Puzzle Set,Toys,3,893.47,UPI,2025-12-24
+227,25,USB-C Hub,Electronics,2,1576.28,Credit Card,2026-02-22
+228,25,Kids Story Set,Books,2,499.58,Cash,2026-01-12
+229,26,Pizza Slice Combo,Food Court,1,435.61,Cash,2025-12-12
+230,26,Kids Story Set,Books,3,1040.92,Credit Card,2026-01-18
+231,26,Wall Art Frame,Home Decor,2,1363.66,Credit Card,2026-07-02
+232,26,Kids Story Set,Books,3,645.2,Debit Card,2026-01-17
+233,26,Coffee & Snack,Food Court,3,261.78,Net Banking,2026-02-24
+234,26,Scented Candle Set,Home Decor,1,911.58,Cash,2026-07-16
+235,26,Self-Help Book,Books,1,776.39,Cash,2025-10-16
+236,26,Bluetooth Speaker,Electronics,3,1354.64,UPI,2026-02-17
+237,26,Table Lamp,Home Decor,3,2049.68,UPI,2026-01-05
+238,26,Cookbook,Books,3,1110.47,Net Banking,2026-06-14
+239,26,Cookbook,Books,2,751.51,Credit Card,2026-04-18
+240,26,Laptop Sleeve,Electronics,3,686.05,Net Banking,2026-02-06
+241,26,Formal Shirt,Fashion,3,1907.45,Debit Card,2026-01-07
+242,27,Puzzle Set,Toys,1,420.11,Cash,2026-07-17
+243,27,Dry Fruits Pack,Grocery,3,1497.26,UPI,2026-03-13
+244,27,Handbag,Fashion,2,3397.6,Debit Card,2026-06-04
+245,27,Self-Help Book,Books,1,360.68,Debit Card,2026-06-13
+246,27,Combo Meal,Food Court,3,376.31,Cash,2026-02-16
+247,27,Perfume,Beauty,1,2913.46,UPI,2026-07-21
+248,27,Cushion Cover Set,Home Decor,2,1025.7,Credit Card,2025-11-02
+249,27,Beverages Combo,Grocery,2,849.64,Net Banking,2025-12-28
+250,27,Self-Help Book,Books,3,738.98,Net Banking,2025-09-30
+251,27,Organic Snack Pack,Grocery,1,559.57,Net Banking,2026-06-21
+252,27,Beverages Combo,Grocery,2,515.26,Debit Card,2025-08-25
+253,28,Makeup Kit,Beauty,2,2676.46,Net Banking,2026-05-15
+254,28,Remote Control Car,Toys,3,2637.55,Credit Card,2025-11-23
+255,28,Perfume,Beauty,3,2857.06,Debit Card,2026-06-06
+256,28,Fiction Novel,Books,1,621.36,Credit Card,2026-07-13
+257,28,Remote Control Car,Toys,2,2964.01,Credit Card,2025-10-11
+258,28,Coffee & Snack,Food Court,2,310.48,Debit Card,2025-12-19
+259,28,Scented Candle Set,Home Decor,3,762.84,Debit Card,2026-07-24
+260,29,Cushion Cover Set,Home Decor,2,964.44,Debit Card,2025-10-17
+261,29,Kids Story Set,Books,2,987.36,Debit Card,2026-01-31
+262,29,Fiction Novel,Books,2,393.6,UPI,2026-06-22
+263,29,Ice Cream Tub,Food Court,1,242.26,Cash,2026-03-28
+264,29,Wall Art Frame,Home Decor,1,1947.76,Net Banking,2026-03-09
+265,29,Self-Help Book,Books,2,681.56,Cash,2025-12-03
+266,29,Coffee & Snack,Food Court,1,274.34,Net Banking,2026-02-03
+267,29,Ice Cream Tub,Food Court,2,264.54,Credit Card,2026-07-30
+268,29,Puzzle Set,Toys,3,658.51,Cash,2025-09-13
+269,30,Skincare Set,Beauty,2,2240.19,UPI,2026-06-16
+270,30,Cookbook,Books,2,792.75,Net Banking,2026-07-28
+271,30,Perfume,Beauty,2,2215.07,Cash,2026-07-17
+272,30,Hair Care Combo,Beauty,2,1264.4,Net Banking,2025-10-08
+273,30,Cotton T-Shirt,Fashion,2,1180.07,UPI,2026-02-13
+274,30,Makeup Kit,Beauty,1,2485.43,Net Banking,2025-10-19
+275,31,Skincare Set,Beauty,1,877.02,Cash,2026-03-06
+276,31,Hair Care Combo,Beauty,3,648.94,UPI,2026-06-13
+277,31,Self-Help Book,Books,3,496.48,Net Banking,2026-03-23
+278,31,Cookbook,Books,2,1066.99,Credit Card,2025-12-23
+279,31,Kids Story Set,Books,2,939.05,UPI,2025-10-29
+280,31,Phone Case,Electronics,3,584.75,Net Banking,2025-10-31
+281,31,Running Shoes,Footwear,1,4125.63,Net Banking,2025-11-28
+282,31,Wall Art Frame,Home Decor,1,1750.33,Net Banking,2026-08-07
+283,32,Cotton T-Shirt,Fashion,2,415.15,Debit Card,2026-01-21
+284,32,Wall Art Frame,Home Decor,3,1174.53,Credit Card,2025-12-25
+285,32,Organic Snack Pack,Grocery,3,636.53,Net Banking,2025-12-22
+286,32,Scented Candle Set,Home Decor,2,1165.35,UPI,2025-11-24
+287,32,Makeup Kit,Beauty,3,2319.32,UPI,2025-09-09
+288,32,Ice Cream Tub,Food Court,2,487.2,UPI,2025-11-11
+289,32,Formal Shoes,Footwear,3,3882.17,Cash,2026-05-09
+290,32,Cookbook,Books,3,779.04,UPI,2026-04-05
+291,32,Handbag,Fashion,2,3868.18,UPI,2026-02-02
+292,32,Beverages Combo,Grocery,3,429.45,UPI,2026-07-14
+293,32,Coffee & Snack,Food Court,1,336.83,Net Banking,2026-05-12
+294,32,Board Game,Toys,3,637.27,Debit Card,2025-10-27
+295,32,Running Shoes,Footwear,3,4410.45,Debit Card,2026-04-30
+296,33,Sneakers,Fashion,2,3321.17,Debit Card,2026-07-03
+297,33,Phone Case,Electronics,1,886.75,Cash,2026-01-27
+298,34,Formal Shoes,Footwear,3,2667.15,Credit Card,2026-07-24
+299,34,Running Shoes,Footwear,1,5213.66,Debit Card,2026-01-22
+300,34,USB-C Hub,Electronics,2,1276.39,UPI,2026-05-20
+301,34,Wireless Earbuds,Electronics,3,2395.18,UPI,2026-06-30
+302,34,Puzzle Set,Toys,3,893.46,Cash,2025-11-28
+303,34,Dry Fruits Pack,Grocery,1,772.84,Debit Card,2026-03-07
+304,34,Coffee & Snack,Food Court,1,329.65,UPI,2026-03-04
+305,34,Casual Sandals,Footwear,3,1333.15,Cash,2026-01-28
+306,34,Makeup Kit,Beauty,3,1082.15,Debit Card,2026-07-06
+307,35,Coffee & Snack,Food Court,1,383.96,Cash,2026-04-12
+308,35,Sports Sneakers,Footwear,2,5138.15,Net Banking,2026-03-22
+309,35,Smartwatch,Electronics,3,6095.26,Credit Card,2026-04-25
+310,35,Sneakers,Fashion,2,3227.23,Net Banking,2025-09-06
+311,36,Building Blocks Set,Toys,2,1530.32,Net Banking,2026-02-16
+312,36,Casual Sandals,Footwear,2,1748.83,Cash,2026-06-06
+313,36,Cookbook,Books,2,1061.55,Debit Card,2025-11-21
+314,36,Running Shoes,Footwear,3,3934.17,UPI,2025-08-28
+315,36,Handbag,Fashion,3,1892.73,Debit Card,2025-12-08
+316,36,Perfume,Beauty,3,1660.7,Credit Card,2026-01-09
+317,36,Sports Sneakers,Footwear,3,2818.3,Credit Card,2026-01-07
+318,36,Ice Cream Tub,Food Court,2,353.97,Credit Card,2025-11-08
+319,36,Hair Care Combo,Beauty,2,1172.77,Cash,2026-08-12
+320,36,Building Blocks Set,Toys,3,1669.55,Credit Card,2026-07-17
+321,36,Scented Candle Set,Home Decor,3,960.31,Credit Card,2026-07-24
+322,36,Combo Meal,Food Court,1,350.48,Cash,2026-06-15
+323,36,Cookbook,Books,2,858.83,Credit Card,2026-02-12
+324,37,Perfume,Beauty,2,3029.9,Debit Card,2026-06-24
+325,37,Hair Care Combo,Beauty,3,1028.84,Credit Card,2026-05-01
+326,37,Smartwatch,Electronics,3,5046.52,Cash,2025-11-18
+327,37,Hair Care Combo,Beauty,1,1323.36,UPI,2025-12-31
+328,37,Beverages Combo,Grocery,3,531.94,Credit Card,2026-06-27
+329,37,Table Lamp,Home Decor,1,1357.27,Net Banking,2026-07-03
+330,37,Power Bank,Electronics,3,1677.12,Debit Card,2026-07-30
+331,37,Power Bank,Electronics,3,1470.65,Credit Card,2026-05-04
+332,37,Beverages Combo,Grocery,3,563.91,UPI,2025-11-02
+333,37,Self-Help Book,Books,1,450.88,Net Banking,2025-09-19
+334,37,Sports Sneakers,Footwear,1,3551.75,Net Banking,2025-11-11
+335,37,Dry Fruits Pack,Grocery,1,1055.85,Cash,2026-02-28
+336,38,Makeup Kit,Beauty,2,2362.25,UPI,2026-06-08
+337,38,Wall Art Frame,Home Decor,2,1656.18,Debit Card,2026-04-22
+338,38,Remote Control Car,Toys,1,3053.29,Cash,2025-11-09
+339,38,Wall Art Frame,Home Decor,2,1143.79,UPI,2026-05-11
+340,38,Sneakers,Fashion,1,5388.53,Debit Card,2025-11-22
+341,38,Smartwatch,Electronics,3,4574.42,Credit Card,2025-10-19
+342,38,Cotton T-Shirt,Fashion,3,1043.72,Net Banking,2025-09-14
+343,38,Sports Sneakers,Footwear,2,3231.11,Credit Card,2026-03-21
+344,38,Casual Sandals,Footwear,1,1754.49,Debit Card,2025-12-21
+345,38,Sports Sneakers,Footwear,3,5702.94,UPI,2026-03-12
+346,38,Cushion Cover Set,Home Decor,2,1033.65,UPI,2026-03-19
+347,38,Cookbook,Books,3,872.8,UPI,2025-12-26
+348,38,Formal Shoes,Footwear,1,2644.89,Debit Card,2025-11-08
+349,38,Grocery Basket - Weekly,Grocery,3,1243.32,Cash,2025-10-31
+350,39,Organic Snack Pack,Grocery,2,497.92,Debit Card,2025-11-05
+351,39,Coffee & Snack,Food Court,2,214.33,Cash,2025-09-29
+352,39,Ice Cream Tub,Food Court,2,419.83,Debit Card,2026-05-29
+353,39,Hair Care Combo,Beauty,3,684.05,Credit Card,2025-09-29
+354,39,Skincare Set,Beauty,1,2226.42,Credit Card,2025-09-15
+355,39,Power Bank,Electronics,3,1078.74,Credit Card,2026-04-27
+356,40,Grocery Basket - Weekly,Grocery,2,1171.82,Credit Card,2026-02-13
+357,40,Pizza Slice Combo,Food Court,3,306.29,Cash,2025-11-14
+358,40,Wireless Earbuds,Electronics,2,3088.25,UPI,2025-11-22
+359,40,Phone Case,Electronics,3,787.89,Debit Card,2026-01-15
+360,40,Denim Jacket,Fashion,1,2691.46,Net Banking,2026-05-17
+361,40,Makeup Kit,Beauty,2,2611.95,Credit Card,2026-02-01
+362,40,Cookbook,Books,1,867.2,Debit Card,2025-09-01
+363,40,Building Blocks Set,Toys,3,1549.86,Credit Card,2026-08-07
+364,40,Cushion Cover Set,Home Decor,2,877.17,Credit Card,2026-07-26
+365,40,Grocery Basket - Weekly,Grocery,2,1649.76,UPI,2025-09-27
+366,40,Handbag,Fashion,1,4717.03,Net Banking,2026-05-07
+367,40,Coffee & Snack,Food Court,1,161.64,UPI,2025-09-07
+368,40,Skincare Set,Beauty,2,1104.9,Debit Card,2026-08-15
+369,41,Dry Fruits Pack,Grocery,2,1428.87,Net Banking,2026-06-01
+370,41,Sports Sneakers,Footwear,3,4869.62,Cash,2026-03-07
+371,41,Grocery Basket - Weekly,Grocery,2,1651.35,Credit Card,2026-07-27
+372,41,Wall Art Frame,Home Decor,2,1774.14,Net Banking,2025-10-18
+373,41,Scented Candle Set,Home Decor,2,423.7,Cash,2026-01-05
+374,41,Formal Shoes,Footwear,2,3293.2,Debit Card,2026-01-14
+375,41,Table Lamp,Home Decor,2,2367.12,Credit Card,2026-04-19
+376,41,Formal Shirt,Fashion,3,1100.49,Debit Card,2025-10-03
+377,41,Scented Candle Set,Home Decor,1,688.56,UPI,2026-08-21
+378,41,Coffee & Snack,Food Court,1,340.34,Credit Card,2026-06-17
+379,41,Dry Fruits Pack,Grocery,3,948.84,Cash,2025-12-04
+380,42,Wireless Earbuds,Electronics,1,2561.74,Net Banking,2025-10-22
+381,42,Cookbook,Books,2,509.87,Credit Card,2026-02-06
+382,42,Perfume,Beauty,1,2801.49,Cash,2025-09-07
+383,43,Beverages Combo,Grocery,2,610.79,Credit Card,2026-06-10
+384,43,Dry Fruits Pack,Grocery,2,775.96,Credit Card,2025-12-19
+385,43,Kids Story Set,Books,3,1155.38,Cash,2025-10-07
+386,43,Sports Sneakers,Footwear,2,2874.4,Cash,2026-08-20
+387,44,Scented Candle Set,Home Decor,2,752.18,Net Banking,2025-09-24
+388,44,Beverages Combo,Grocery,3,624.47,Cash,2026-05-13
+389,44,Self-Help Book,Books,2,782.29,Cash,2026-03-27
+390,44,Formal Shoes,Footwear,2,2815.35,Credit Card,2026-02-18
+391,44,Casual Sandals,Footwear,3,1418.06,Cash,2026-08-10
+392,44,Sports Sneakers,Footwear,3,5291.9,Cash,2026-07-19
+393,44,Ice Cream Tub,Food Court,1,390.0,Debit Card,2026-04-16
+394,45,Cushion Cover Set,Home Decor,3,573.97,Net Banking,2025-12-21
+395,45,Cushion Cover Set,Home Decor,2,1043.65,Net Banking,2025-08-29
+396,45,Denim Jacket,Fashion,3,3107.22,UPI,2025-09-17
+397,45,Grocery Basket - Weekly,Grocery,3,1757.47,Cash,2025-09-11
+398,45,Cookbook,Books,1,584.76,Debit Card,2026-04-13
+399,45,Perfume,Beauty,2,2448.18,Net Banking,2025-12-29
+400,45,Perfume,Beauty,1,2165.91,Credit Card,2025-12-19
+401,45,Puzzle Set,Toys,1,852.33,Debit Card,2026-06-25
+402,45,Kids Story Set,Books,1,674.45,Cash,2025-11-30
+403,45,Cookbook,Books,3,578.1,Cash,2025-09-01
+404,45,Fiction Novel,Books,3,385.12,Credit Card,2026-06-26
+405,45,Fiction Novel,Books,1,554.71,Net Banking,2026-04-21
+406,45,Organic Snack Pack,Grocery,2,498.59,Debit Card,2025-12-30
+407,46,Wall Art Frame,Home Decor,3,860.94,Cash,2026-01-14
+408,46,Laptop Sleeve,Electronics,1,1114.11,Net Banking,2026-01-05
+409,46,Cushion Cover Set,Home Decor,1,504.45,UPI,2026-05-10
+410,46,Handbag,Fashion,3,1856.13,UPI,2026-05-20
+411,46,Self-Help Book,Books,2,528.78,Cash,2025-09-14
+412,46,Makeup Kit,Beauty,3,2153.64,Net Banking,2026-02-04
+413,46,Formal Shirt,Fashion,2,1357.58,Debit Card,2025-10-11
+414,46,Building Blocks Set,Toys,2,1573.74,Debit Card,2026-06-24
+415,46,Building Blocks Set,Toys,3,937.96,Net Banking,2026-06-12
+416,46,Cushion Cover Set,Home Decor,3,1096.43,Cash,2026-02-08
+417,46,Dry Fruits Pack,Grocery,3,1135.5,Debit Card,2025-09-27
+418,46,Perfume,Beauty,1,2571.0,UPI,2026-05-20
+419,46,Combo Meal,Food Court,1,552.93,Debit Card,2025-12-18
+420,46,Sports Sneakers,Footwear,3,5873.4,Cash,2025-09-23
+421,47,Pizza Slice Combo,Food Court,2,584.06,Debit Card,2025-12-16
+422,47,Handbag,Fashion,1,1608.01,Credit Card,2026-03-27
+423,47,Remote Control Car,Toys,1,2436.5,Net Banking,2026-01-01
+424,47,Combo Meal,Food Court,2,450.45,UPI,2025-11-18
+425,47,Skincare Set,Beauty,2,2092.01,Debit Card,2025-11-17
+426,47,Table Lamp,Home Decor,3,2298.38,UPI,2026-04-19
+427,47,Power Bank,Electronics,1,1241.66,Credit Card,2026-01-11
+428,47,Casual Sandals,Footwear,3,1572.84,UPI,2025-09-05
+429,48,Wall Art Frame,Home Decor,1,1462.61,Credit Card,2026-05-10
+430,48,Kids Story Set,Books,1,877.49,UPI,2026-03-11
+431,48,Board Game,Toys,3,1452.4,Credit Card,2025-09-10
+432,48,Dry Fruits Pack,Grocery,2,1418.77,Debit Card,2025-09-22
+433,48,Organic Snack Pack,Grocery,2,387.75,Cash,2026-04-19
+434,48,Ice Cream Tub,Food Court,2,373.23,Cash,2025-10-06
+435,48,Cushion Cover Set,Home Decor,1,575.52,Net Banking,2026-01-29
+436,48,Board Game,Toys,2,954.7,Net Banking,2026-03-09
+437,48,USB-C Hub,Electronics,3,1728.96,Cash,2026-07-07
+438,48,Fiction Novel,Books,2,608.06,Cash,2026-05-04
+439,48,Sports Sneakers,Footwear,2,3439.88,Net Banking,2026-03-04
+440,48,Dry Fruits Pack,Grocery,3,1288.3,Credit Card,2026-07-30
+441,48,Winter Coat,Fashion,2,6027.5,Credit Card,2026-08-15
+442,48,Dry Fruits Pack,Grocery,2,956.52,Debit Card,2026-05-12
+443,48,Remote Control Car,Toys,2,3211.17,UPI,2026-07-07
+444,49,Formal Shirt,Fashion,3,1763.86,Credit Card,2026-05-31
+445,49,Scented Candle Set,Home Decor,1,980.79,Credit Card,2026-01-16
+446,49,Denim Jacket,Fashion,1,2162.82,Net Banking,2026-06-17
+447,49,Sports Sneakers,Footwear,3,2532.5,Credit Card,2026-03-01
+448,49,Wall Art Frame,Home Decor,1,1268.78,Credit Card,2026-02-08
+449,49,Denim Jacket,Fashion,2,2332.7,Cash,2026-06-14
+450,50,Organic Snack Pack,Grocery,3,341.05,Net Banking,2026-08-19
+451,50,Dry Fruits Pack,Grocery,1,851.19,Debit Card,2025-10-06
+452,50,Cushion Cover Set,Home Decor,1,1359.96,Debit Card,2026-07-03
+453,50,Handbag,Fashion,2,4055.03,UPI,2026-01-16
+454,50,Organic Snack Pack,Grocery,1,466.18,Net Banking,2026-04-18
+455,50,Building Blocks Set,Toys,3,1802.26,Debit Card,2026-03-22
+456,50,Perfume,Beauty,2,3293.96,Credit Card,2025-09-27
+457,50,Sports Sneakers,Footwear,1,3850.6,Net Banking,2025-12-11
+458,50,Handbag,Fashion,1,4610.54,UPI,2026-02-20
+459,50,Dry Fruits Pack,Grocery,3,1360.81,UPI,2026-01-20
+460,50,Perfume,Beauty,1,3335.63,Net Banking,2026-08-15
+461,50,Denim Jacket,Fashion,1,2245.71,Cash,2026-07-24
+462,50,Makeup Kit,Beauty,3,2220.0,Cash,2026-01-23
+463,50,Table Lamp,Home Decor,3,2117.02,Debit Card,2025-10-12
+464,51,Formal Shirt,Fashion,1,1002.73,Net Banking,2026-06-05
+465,51,Cookbook,Books,3,969.15,Credit Card,2025-09-09
+466,51,Puzzle Set,Toys,1,737.98,Debit Card,2026-07-25
+467,51,Sneakers,Fashion,3,2463.95,Credit Card,2025-10-16
+468,51,Remote Control Car,Toys,3,1474.72,Credit Card,2026-06-14
+469,51,Dry Fruits Pack,Grocery,3,1453.02,UPI,2025-12-02
+470,52,Self-Help Book,Books,2,674.89,Credit Card,2026-06-24
+471,52,Cookbook,Books,1,717.58,Net Banking,2026-04-11
+472,52,Sneakers,Fashion,2,3820.79,Cash,2026-07-26
+473,52,Beverages Combo,Grocery,1,510.12,Credit Card,2025-11-03
+474,53,Skincare Set,Beauty,1,874.86,Credit Card,2026-04-20
+475,53,Coffee & Snack,Food Court,1,245.74,Credit Card,2026-05-24
+476,53,Hair Care Combo,Beauty,1,724.52,UPI,2026-01-22
+477,53,Building Blocks Set,Toys,1,1443.0,Credit Card,2025-12-09
+478,53,Organic Snack Pack,Grocery,1,782.6,Credit Card,2026-01-30
+479,54,Board Game,Toys,3,827.3,Credit Card,2026-01-02
+480,54,Self-Help Book,Books,2,445.8,Debit Card,2025-10-09
+481,54,Coffee & Snack,Food Court,2,297.92,Net Banking,2026-05-15
+482,54,Casual Sandals,Footwear,2,607.65,Debit Card,2026-08-11
+483,54,Makeup Kit,Beauty,3,2235.48,UPI,2026-08-19
+484,54,USB-C Hub,Electronics,3,1588.76,Credit Card,2026-03-19
+485,54,Casual Sandals,Footwear,1,1103.78,UPI,2026-06-12
+486,54,Denim Jacket,Fashion,3,3366.17,UPI,2026-01-24
+487,54,Combo Meal,Food Court,3,453.27,Cash,2026-06-16
+488,55,Power Bank,Electronics,1,1761.18,UPI,2026-04-24
+489,55,Board Game,Toys,2,1426.04,UPI,2025-08-30
+490,55,Cookbook,Books,1,717.56,Debit Card,2026-05-12
+491,56,Cotton T-Shirt,Fashion,2,484.53,UPI,2025-12-28
+492,56,Table Lamp,Home Decor,1,1918.26,UPI,2026-01-04
+493,56,Coffee & Snack,Food Court,1,363.12,UPI,2026-06-04
+494,56,Bluetooth Speaker,Electronics,2,3122.63,Credit Card,2026-06-09
+495,56,Formal Shoes,Footwear,1,2869.86,UPI,2025-09-11
+496,56,Remote Control Car,Toys,2,1271.49,Net Banking,2026-01-04
+497,56,Perfume,Beauty,1,1465.23,Credit Card,2026-06-13
+498,56,Wireless Earbuds,Electronics,1,3991.12,Debit Card,2026-06-18
+499,56,Scented Candle Set,Home Decor,3,949.03,Net Banking,2026-07-11
+500,56,Building Blocks Set,Toys,1,728.34,Cash,2026-05-14
+501,56,Grocery Basket - Weekly,Grocery,2,2338.63,Credit Card,2026-06-22
+502,56,Combo Meal,Food Court,3,308.8,Cash,2026-01-14
+503,56,Combo Meal,Food Court,2,383.96,UPI,2026-05-27
+504,56,Casual Sandals,Footwear,2,929.98,Credit Card,2026-06-08
+505,57,Formal Shoes,Footwear,3,3147.01,Credit Card,2025-12-21
+506,57,Formal Shirt,Fashion,2,1397.92,Net Banking,2026-05-13
+507,57,Running Shoes,Footwear,3,5465.03,Cash,2026-02-21
+508,57,Hair Care Combo,Beauty,3,844.03,UPI,2025-12-09
+509,57,Scented Candle Set,Home Decor,2,543.85,Debit Card,2025-10-22
+510,57,USB-C Hub,Electronics,1,1734.25,Net Banking,2025-12-25
+511,57,Self-Help Book,Books,1,786.99,Debit Card,2026-04-19
+512,57,Building Blocks Set,Toys,1,1693.26,Cash,2025-11-02
+513,57,Self-Help Book,Books,3,388.05,UPI,2026-03-14
+514,57,Laptop Sleeve,Electronics,3,1200.56,Debit Card,2025-11-08
+515,57,Sports Sneakers,Footwear,1,4397.44,Credit Card,2025-12-15
+516,58,Bluetooth Speaker,Electronics,1,2583.82,Cash,2025-11-27
+517,58,Smartwatch,Electronics,1,7548.43,UPI,2026-06-18
+518,58,Beverages Combo,Grocery,1,441.69,Debit Card,2025-10-27
+519,59,Scarf,Fashion,2,615.78,UPI,2026-07-17
+520,59,Table Lamp,Home Decor,2,1539.47,Debit Card,2026-06-15
+521,59,Cushion Cover Set,Home Decor,1,1149.18,Net Banking,2025-08-26
+522,59,Self-Help Book,Books,1,632.77,UPI,2026-02-11
+523,59,Remote Control Car,Toys,1,1608.73,Net Banking,2025-08-29
+524,59,Table Lamp,Home Decor,2,1245.96,Debit Card,2025-10-14
+525,59,Sneakers,Fashion,3,2562.57,Debit Card,2026-07-15
+526,59,Kids Story Set,Books,1,534.31,UPI,2025-08-26
+527,59,Combo Meal,Food Court,1,342.82,Credit Card,2025-09-03
+528,59,Kids Story Set,Books,3,1029.62,Credit Card,2026-08-23
+529,59,Cushion Cover Set,Home Decor,1,1232.58,Cash,2026-01-24
+530,59,Scented Candle Set,Home Decor,1,836.82,Net Banking,2025-12-21
+531,59,Casual Sandals,Footwear,1,1141.54,Credit Card,2026-03-26
+532,59,Kids Story Set,Books,1,1161.33,Debit Card,2026-03-01
+533,60,Grocery Basket - Weekly,Grocery,1,1729.98,Net Banking,2026-03-03
+534,60,Combo Meal,Food Court,3,400.96,Net Banking,2026-05-31
+535,60,Wall Art Frame,Home Decor,2,674.98,Debit Card,2026-05-10
+536,60,Scented Candle Set,Home Decor,2,928.48,Credit Card,2026-04-24
+537,60,Power Bank,Electronics,2,1643.3,Credit Card,2026-06-06
+538,60,Fiction Novel,Books,2,442.42,Net Banking,2025-09-19
+539,60,Ice Cream Tub,Food Court,1,229.1,UPI,2026-05-28
+540,60,Sneakers,Fashion,2,5375.08,Cash,2026-02-01
+541,61,Building Blocks Set,Toys,2,1534.43,UPI,2026-05-21
+542,61,Scented Candle Set,Home Decor,1,549.27,Cash,2026-04-11
+543,61,Coffee & Snack,Food Court,2,206.56,Credit Card,2025-11-08
+544,61,Grocery Basket - Weekly,Grocery,2,945.7,Cash,2025-11-19
+545,61,Running Shoes,Footwear,3,4974.63,Net Banking,2026-01-21
+546,61,Ice Cream Tub,Food Court,1,342.88,Credit Card,2026-02-02
+547,61,Perfume,Beauty,2,1536.79,Debit Card,2026-05-27
+548,61,Casual Sandals,Footwear,2,751.42,Cash,2026-07-14
+549,61,Casual Sandals,Footwear,2,1600.93,Credit Card,2026-03-13
+550,62,Cushion Cover Set,Home Decor,2,1052.05,Cash,2025-11-30
+551,62,USB-C Hub,Electronics,3,1640.49,Cash,2025-11-29
+552,62,Sneakers,Fashion,3,2598.57,Net Banking,2025-10-26
+553,63,Denim Jacket,Fashion,1,2756.56,Net Banking,2026-03-30
+554,63,Cookbook,Books,3,711.31,Net Banking,2025-12-18
+555,63,Combo Meal,Food Court,2,310.27,Net Banking,2026-06-11
+556,63,Table Lamp,Home Decor,2,1652.01,Debit Card,2025-09-04
+557,63,Laptop Sleeve,Electronics,2,975.22,Credit Card,2026-02-14
+558,63,Kids Story Set,Books,2,648.76,Credit Card,2025-09-01
+559,63,Casual Sandals,Footwear,3,960.58,UPI,2026-01-09
+560,63,Puzzle Set,Toys,1,662.99,Cash,2026-05-19
+561,63,Sports Sneakers,Footwear,3,5093.31,Credit Card,2026-02-13
+562,63,Perfume,Beauty,3,1383.73,Cash,2025-12-07
+563,63,Grocery Basket - Weekly,Grocery,1,1095.35,Debit Card,2026-07-25
+564,63,Power Bank,Electronics,2,965.73,Debit Card,2025-08-28
+565,63,Board Game,Toys,3,1323.51,Credit Card,2026-02-01
+566,63,Bluetooth Speaker,Electronics,3,2056.67,Debit Card,2026-01-07
+567,64,Coffee & Snack,Food Court,2,236.06,Credit Card,2025-09-05
+568,64,Building Blocks Set,Toys,1,1202.54,Debit Card,2025-11-04
+569,64,Casual Sandals,Footwear,2,1413.23,Cash,2025-09-24
+570,64,Skincare Set,Beauty,3,2269.87,Cash,2026-08-19
+571,64,Organic Snack Pack,Grocery,1,660.69,UPI,2026-05-01
+572,64,Board Game,Toys,2,923.81,Cash,2026-02-26
+573,64,Remote Control Car,Toys,3,2273.41,Net Banking,2025-11-30
+574,64,Table Lamp,Home Decor,3,913.96,Net Banking,2026-02-13
+575,64,Board Game,Toys,2,1184.41,UPI,2026-07-22
+576,64,Board Game,Toys,2,1361.49,UPI,2025-09-22
+577,64,Casual Sandals,Footwear,1,1220.75,Net Banking,2026-07-25
+578,64,Scented Candle Set,Home Decor,3,944.6,Cash,2026-08-10
+579,64,Board Game,Toys,2,1406.91,Credit Card,2026-02-06
+580,64,Formal Shoes,Footwear,1,3761.68,Net Banking,2025-09-06
+581,64,Coffee & Snack,Food Court,1,276.83,Net Banking,2025-09-21
+582,65,Building Blocks Set,Toys,3,1312.02,Net Banking,2026-04-13
+583,65,Beverages Combo,Grocery,1,858.1,Debit Card,2026-02-23
+584,65,Puzzle Set,Toys,2,772.85,UPI,2026-02-14
+585,65,Puzzle Set,Toys,2,810.73,Net Banking,2026-07-27
+586,66,Sneakers,Fashion,3,5557.7,Cash,2026-06-23
+587,66,Makeup Kit,Beauty,1,1767.53,Debit Card,2026-06-14
+588,66,Cookbook,Books,2,1289.75,UPI,2026-06-11
+589,66,Grocery Basket - Weekly,Grocery,3,1628.89,UPI,2026-05-25
+590,66,Wireless Earbuds,Electronics,1,2856.16,Net Banking,2026-05-29
+591,66,Dry Fruits Pack,Grocery,1,1285.21,Net Banking,2026-06-18
+592,66,Cushion Cover Set,Home Decor,2,903.39,Credit Card,2026-02-08
+593,66,Phone Case,Electronics,2,419.65,UPI,2026-08-16
+594,66,Perfume,Beauty,1,1250.17,Debit Card,2025-10-07
+595,66,Formal Shoes,Footwear,1,2642.65,Net Banking,2026-02-08
+596,66,Remote Control Car,Toys,1,1350.16,UPI,2026-03-24
+597,67,Makeup Kit,Beauty,3,1810.7,UPI,2026-06-16
+598,67,Coffee & Snack,Food Court,1,337.53,Credit Card,2026-01-29
+599,67,Casual Sandals,Footwear,1,1472.6,Credit Card,2026-05-07
+600,67,Perfume,Beauty,3,1544.85,Credit Card,2025-09-24
+601,67,Scented Candle Set,Home Decor,3,1017.0,Net Banking,2026-07-30
+602,67,Laptop Sleeve,Electronics,1,608.11,Credit Card,2026-07-30
+603,67,Cushion Cover Set,Home Decor,3,880.25,Cash,2026-04-16
+604,67,Organic Snack Pack,Grocery,3,717.12,UPI,2026-08-19
+605,67,Table Lamp,Home Decor,2,2158.72,Net Banking,2025-10-09
+606,68,Dry Fruits Pack,Grocery,1,1330.65,Net Banking,2025-12-05
+607,68,Formal Shirt,Fashion,1,1048.22,Debit Card,2025-12-12
+608,68,Formal Shoes,Footwear,1,4045.05,Cash,2026-02-21
+609,68,Remote Control Car,Toys,2,1290.63,Cash,2026-05-09
+610,68,Self-Help Book,Books,3,301.37,Credit Card,2026-07-09
+611,68,Ice Cream Tub,Food Court,3,484.83,Credit Card,2026-07-16
+612,68,Remote Control Car,Toys,2,2250.53,Cash,2026-04-10
+613,68,Wireless Earbuds,Electronics,1,3939.54,UPI,2026-03-28
+614,68,Cookbook,Books,1,1090.83,Credit Card,2026-07-31
+615,68,Organic Snack Pack,Grocery,2,497.2,UPI,2025-10-09
+616,68,Formal Shirt,Fashion,1,1959.45,Cash,2026-06-26
+617,68,Cushion Cover Set,Home Decor,2,771.83,Cash,2025-09-04
+618,68,Wall Art Frame,Home Decor,3,758.28,Debit Card,2026-07-24
+619,69,Cushion Cover Set,Home Decor,3,1302.26,Debit Card,2026-01-11
+620,69,Scented Candle Set,Home Decor,3,889.09,Cash,2026-06-18
+621,69,Combo Meal,Food Court,2,560.66,Credit Card,2026-07-31
+622,70,Fiction Novel,Books,3,567.06,Net Banking,2025-11-28
+623,70,Formal Shoes,Footwear,3,3201.57,Net Banking,2025-08-30
+624,70,Sneakers,Fashion,1,4646.85,UPI,2025-12-20
+625,70,Wall Art Frame,Home Decor,3,1774.65,Credit Card,2025-10-14
+626,70,Laptop Sleeve,Electronics,3,1434.37,Cash,2025-12-26
+627,70,Grocery Basket - Weekly,Grocery,2,2077.43,UPI,2026-04-22
+628,71,Phone Case,Electronics,3,433.62,Cash,2026-02-11
+629,71,Running Shoes,Footwear,3,3715.01,Credit Card,2026-01-06
+630,71,Pizza Slice Combo,Food Court,2,426.42,Credit Card,2025-09-23
+631,71,Sneakers,Fashion,3,3649.35,Credit Card,2025-11-15
+632,71,Scarf,Fashion,3,662.52,UPI,2025-10-01
+633,71,Perfume,Beauty,2,3032.87,UPI,2026-03-02
+634,72,USB-C Hub,Electronics,2,1067.5,Net Banking,2026-03-07
+635,72,Coffee & Snack,Food Court,1,328.98,Debit Card,2026-07-05
+636,72,Smartwatch,Electronics,3,4453.26,Net Banking,2026-03-27
+637,72,Makeup Kit,Beauty,1,2374.4,Cash,2026-05-31
+638,72,Dry Fruits Pack,Grocery,3,606.96,Debit Card,2026-05-15
+639,72,Scarf,Fashion,2,535.74,UPI,2026-05-18
+640,72,Scarf,Fashion,3,548.68,Net Banking,2025-09-13
+641,72,Scarf,Fashion,2,835.05,Net Banking,2025-09-20
+642,72,Perfume,Beauty,1,3898.79,Credit Card,2025-11-25
+643,72,Hair Care Combo,Beauty,2,1338.82,Debit Card,2025-12-06
+644,72,Organic Snack Pack,Grocery,3,362.13,Net Banking,2025-10-20
+645,72,Cookbook,Books,3,834.93,Debit Card,2025-09-03
+646,72,Puzzle Set,Toys,2,878.16,Debit Card,2026-01-04
+647,72,Dry Fruits Pack,Grocery,3,1102.52,UPI,2025-12-04
+648,72,Makeup Kit,Beauty,3,2394.94,Debit Card,2025-10-04
+649,73,Formal Shoes,Footwear,3,3653.85,Debit Card,2026-06-17
+650,73,Makeup Kit,Beauty,2,2391.74,Cash,2025-11-09
+651,73,Scented Candle Set,Home Decor,2,1101.98,Net Banking,2026-08-17
+652,73,Denim Jacket,Fashion,1,2447.48,Credit Card,2025-09-14
+653,73,Formal Shoes,Footwear,1,3825.5,UPI,2026-03-30
+654,74,Laptop Sleeve,Electronics,1,1284.36,Credit Card,2025-11-19
+655,74,Cookbook,Books,3,581.98,Debit Card,2025-11-09
+656,74,Hair Care Combo,Beauty,3,737.6,Credit Card,2026-03-29
+657,74,Cushion Cover Set,Home Decor,3,916.57,Net Banking,2026-03-16
+658,75,Laptop Sleeve,Electronics,3,751.34,Debit Card,2026-01-09
+659,75,Self-Help Book,Books,1,688.07,Cash,2026-03-26
+660,76,Cotton T-Shirt,Fashion,3,1169.98,Credit Card,2025-12-03
+661,76,Table Lamp,Home Decor,3,1714.16,Debit Card,2026-04-10
+662,76,Beverages Combo,Grocery,2,403.95,Debit Card,2025-08-25
+663,76,Bluetooth Speaker,Electronics,3,3335.84,Net Banking,2026-07-28
+664,77,Puzzle Set,Toys,3,773.94,Credit Card,2026-02-21
+665,77,Self-Help Book,Books,3,778.49,Net Banking,2026-07-20
+666,77,Dry Fruits Pack,Grocery,2,1043.08,UPI,2026-07-07
+667,77,Casual Sandals,Footwear,2,1396.0,UPI,2026-02-20
+668,77,Sports Sneakers,Footwear,3,5988.21,Credit Card,2026-08-19
+669,77,Cookbook,Books,3,692.28,Net Banking,2025-10-13
+670,77,Running Shoes,Footwear,2,4452.42,Credit Card,2026-02-09
+671,77,Scented Candle Set,Home Decor,2,832.19,Net Banking,2026-08-11
+672,77,Cookbook,Books,2,889.44,Debit Card,2025-09-24
+673,77,Fiction Novel,Books,1,676.7,Net Banking,2025-11-21
+674,77,Laptop Sleeve,Electronics,3,565.47,Debit Card,2025-10-05
+675,77,Table Lamp,Home Decor,3,1290.6,Credit Card,2026-01-13
+676,77,Grocery Basket - Weekly,Grocery,2,1580.68,Credit Card,2026-08-04
+677,77,Denim Jacket,Fashion,2,2102.59,Credit Card,2025-11-11
+678,77,Formal Shoes,Footwear,2,2900.61,Cash,2025-10-05
+679,78,Fiction Novel,Books,1,425.28,Credit Card,2025-11-23
+680,78,Scarf,Fashion,1,747.57,Credit Card,2025-08-30
+681,78,Fiction Novel,Books,3,380.43,Net Banking,2026-03-22
+682,78,Formal Shirt,Fashion,2,1894.86,Cash,2026-02-09
+683,78,Power Bank,Electronics,1,1103.22,Cash,2026-06-15
+684,78,Makeup Kit,Beauty,1,2916.28,UPI,2026-03-24
+685,78,Phone Case,Electronics,1,824.86,Credit Card,2026-06-21
+686,78,Phone Case,Electronics,3,657.99,Credit Card,2025-11-16
+687,79,Formal Shoes,Footwear,3,2371.69,Debit Card,2025-12-04
+688,79,Organic Snack Pack,Grocery,2,432.47,Credit Card,2026-05-16
+689,79,Grocery Basket - Weekly,Grocery,3,2247.36,Net Banking,2025-12-30
+690,79,Formal Shirt,Fashion,2,1773.19,Debit Card,2026-07-04
+691,79,Coffee & Snack,Food Court,3,239.28,Debit Card,2025-09-22
+692,79,Formal Shirt,Fashion,1,1705.37,Cash,2026-03-14
+693,80,Kids Story Set,Books,1,954.77,Net Banking,2025-11-07
+694,80,Kids Story Set,Books,1,1166.93,UPI,2026-08-21
+695,80,Casual Sandals,Footwear,3,1454.64,UPI,2026-01-12
+696,80,Self-Help Book,Books,2,639.79,Cash,2025-12-21
+697,80,Coffee & Snack,Food Court,2,343.69,Credit Card,2025-11-14
+698,80,Grocery Basket - Weekly,Grocery,1,2231.05,Debit Card,2025-11-21
+699,80,Building Blocks Set,Toys,1,1645.65,Credit Card,2025-12-07
+700,80,Wall Art Frame,Home Decor,3,1868.83,Net Banking,2026-04-12
+701,80,Hair Care Combo,Beauty,1,1153.91,Cash,2026-02-17
+702,81,Remote Control Car,Toys,3,2268.81,Cash,2026-07-08
+703,81,Fiction Novel,Books,3,548.21,Debit Card,2025-09-07
+704,81,Perfume,Beauty,1,2449.42,Net Banking,2025-11-07
+705,81,Dry Fruits Pack,Grocery,1,1439.18,Cash,2026-05-03
+706,81,Running Shoes,Footwear,1,3072.38,Debit Card,2026-08-02
+707,82,Cookbook,Books,2,875.74,Credit Card,2026-07-31
+708,82,Fiction Novel,Books,3,566.68,UPI,2025-10-03
+709,82,Remote Control Car,Toys,2,2066.32,Net Banking,2026-02-17
+710,82,Handbag,Fashion,1,2380.55,Cash,2025-12-02
+711,82,Kids Story Set,Books,2,789.49,Credit Card,2025-10-18
+712,82,Perfume,Beauty,1,2431.72,Net Banking,2026-07-15
+713,82,Remote Control Car,Toys,1,1545.55,Net Banking,2026-02-19
+714,82,Winter Coat,Fashion,2,3536.56,Cash,2026-06-26
+715,82,Pizza Slice Combo,Food Court,1,384.28,Cash,2025-09-26
+716,82,Bluetooth Speaker,Electronics,3,1299.23,Debit Card,2025-10-24
+717,83,Skincare Set,Beauty,1,2314.36,Debit Card,2026-07-26
+718,83,Remote Control Car,Toys,2,2388.27,Net Banking,2025-10-21
+719,83,Laptop Sleeve,Electronics,2,1227.97,Debit Card,2026-07-11
+720,83,Pizza Slice Combo,Food Court,1,646.92,Cash,2026-05-03
+721,84,Organic Snack Pack,Grocery,3,673.93,Debit Card,2026-04-10
+722,84,Cookbook,Books,1,977.23,Cash,2026-04-28
+723,84,Wall Art Frame,Home Decor,1,752.0,Net Banking,2025-11-29
+724,84,Wall Art Frame,Home Decor,1,1447.72,Net Banking,2025-12-23
+725,84,USB-C Hub,Electronics,1,1437.72,Cash,2026-07-07
+726,84,Grocery Basket - Weekly,Grocery,3,2324.85,Cash,2025-09-25
+727,84,Hair Care Combo,Beauty,1,870.38,Net Banking,2025-08-31
+728,84,Wall Art Frame,Home Decor,2,1913.79,UPI,2026-02-09
+729,84,Sneakers,Fashion,2,2535.53,Credit Card,2026-04-26
+730,84,Puzzle Set,Toys,1,454.68,Credit Card,2025-08-25
+731,84,Skincare Set,Beauty,2,1683.6,Debit Card,2025-09-22
+732,85,Cookbook,Books,1,789.82,Net Banking,2026-01-17
+733,85,Board Game,Toys,2,1354.98,UPI,2025-11-07
+734,85,Puzzle Set,Toys,2,752.98,Net Banking,2025-11-14
+735,85,Ice Cream Tub,Food Court,3,311.06,UPI,2025-12-19
+736,85,Board Game,Toys,2,1274.19,Credit Card,2026-06-14
+737,85,Sports Sneakers,Footwear,1,5240.88,Debit Card,2026-07-03
+738,85,Hair Care Combo,Beauty,3,1286.08,Credit Card,2025-10-13
+739,85,Dry Fruits Pack,Grocery,1,1464.57,Debit Card,2026-07-08
+740,85,Pizza Slice Combo,Food Court,2,335.26,UPI,2026-05-02
+741,85,Handbag,Fashion,2,1632.14,Net Banking,2026-01-30
+742,85,Makeup Kit,Beauty,3,2394.37,Debit Card,2026-07-25
+743,85,Pizza Slice Combo,Food Court,3,304.28,UPI,2025-12-01
+744,85,Running Shoes,Footwear,3,4787.07,Debit Card,2025-12-02
+745,86,Grocery Basket - Weekly,Grocery,3,1411.56,Debit Card,2026-08-23
+746,86,Formal Shirt,Fashion,2,1913.57,Cash,2025-09-15
+747,86,Wall Art Frame,Home Decor,3,1324.84,Credit Card,2025-08-28
+748,86,Handbag,Fashion,3,2495.73,UPI,2025-10-29
+749,86,Kids Story Set,Books,1,581.04,Cash,2026-01-03
+750,86,Smartwatch,Electronics,3,3462.69,Net Banking,2026-06-30
+751,86,Handbag,Fashion,1,2529.88,UPI,2025-12-04
+752,86,Makeup Kit,Beauty,2,2357.8,Cash,2025-11-08
+753,86,Formal Shoes,Footwear,2,4395.34,Cash,2025-09-09
+754,86,Power Bank,Electronics,1,1051.15,Debit Card,2026-02-09
+755,86,Formal Shoes,Footwear,2,2913.55,Net Banking,2025-12-02
+756,87,Remote Control Car,Toys,2,1860.77,UPI,2025-09-13
+757,87,Handbag,Fashion,2,4759.89,UPI,2026-03-16
+758,88,Remote Control Car,Toys,3,3378.37,Cash,2026-05-18
+759,88,Casual Sandals,Footwear,2,1482.51,Debit Card,2026-05-10
+760,88,Casual Sandals,Footwear,2,1603.6,Credit Card,2026-06-05
+761,88,Denim Jacket,Fashion,3,2948.88,Net Banking,2025-12-14
+762,88,USB-C Hub,Electronics,1,1828.51,UPI,2025-12-20
+763,89,Cookbook,Books,3,1218.5,Cash,2026-04-05
+764,89,Beverages Combo,Grocery,3,678.52,Credit Card,2026-06-19
+765,89,Hair Care Combo,Beauty,3,978.32,Net Banking,2026-08-07
+766,89,Cookbook,Books,1,1188.32,Credit Card,2026-01-01
+767,89,Hair Care Combo,Beauty,1,815.65,Debit Card,2026-08-17
+768,89,Table Lamp,Home Decor,3,1518.33,Debit Card,2026-04-13
+769,89,Makeup Kit,Beauty,2,1397.99,UPI,2025-10-14
+770,89,Self-Help Book,Books,1,549.39,UPI,2026-01-21
+771,89,Cookbook,Books,1,723.7,Debit Card,2025-11-04
+772,89,Running Shoes,Footwear,1,4578.69,Cash,2025-11-12
+773,89,Wall Art Frame,Home Decor,3,804.18,Cash,2026-06-08
+774,90,Bluetooth Speaker,Electronics,1,2169.5,Net Banking,2025-10-05
+775,90,Makeup Kit,Beauty,2,2549.2,Net Banking,2026-04-17
+776,90,Power Bank,Electronics,1,1028.67,Debit Card,2026-07-24
+777,90,Puzzle Set,Toys,1,803.38,UPI,2026-01-05
+778,90,Board Game,Toys,3,860.31,UPI,2026-04-14
+779,90,Power Bank,Electronics,3,1057.61,Debit Card,2025-10-17
+780,90,Perfume,Beauty,2,3942.24,UPI,2026-02-23
+781,90,Hair Care Combo,Beauty,2,1274.74,Cash,2026-07-14
+782,90,Puzzle Set,Toys,1,679.03,UPI,2026-05-30
+783,90,Cushion Cover Set,Home Decor,1,1348.9,Debit Card,2026-07-14
+784,90,Self-Help Book,Books,3,456.74,UPI,2026-03-27
+785,90,Scented Candle Set,Home Decor,2,1110.15,Net Banking,2025-10-27
+786,90,Pizza Slice Combo,Food Court,1,366.93,Debit Card,2026-06-20
+787,90,Building Blocks Set,Toys,2,973.74,Credit Card,2026-07-02
