@@ -7,7 +7,7 @@ database — not a single prompt-and-pray call, but a six-stage guarded
 pipeline where every request is screened, classified, generated, validated,
 executed, and formatted, with the full path visible to the user.
 
-> Live demo: `https://datapilot-zeta.vercel.app` — try the example chips, or
+> Live demo: `https://datapilot-dp.vercel.app` — try the example chips, or
 > try to break the guardrail. It's been adversarially tested and hardened
 > against exactly that.
 
