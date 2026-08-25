@@ -8,6 +8,7 @@ const NAV = [
   { href: "/", label: "Console" },
   { href: "/docs", label: "Docs" },
   { href: "/about", label: "About" },
+  { href: "/eval", label: "Evaluation" },
 ];
 
 export const STAGES = ["Guardrail", "Classify", "Generate", "Validate", "Execute", "Format"];

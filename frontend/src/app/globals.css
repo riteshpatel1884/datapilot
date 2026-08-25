@@ -1587,3 +1587,156 @@ code {
   font-family: var(--font-mono, monospace);
   color: var(--text-faint, #5c6067);
 }
+
+
+
+
+/* ===== Eval report page ===== */
+
+.eval-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+.eval-header {
+  margin-bottom: 32px;
+}
+
+.eval-back-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-dim, #9a9ea6);
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.eval-back-link:hover {
+  color: var(--accent, #00e6c8);
+}
+
+/* ---- summary cards ---- */
+
+.eval-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.eval-summary-card {
+  border: 1px solid var(--border, #26292e);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--surface, #131416);
+}
+
+.eval-summary-card[data-tone="good"] {
+  border-color: var(--accent, #00e6c8);
+}
+
+.eval-summary-card[data-tone="warn"] {
+  border-color: #e6b400;
+}
+
+.eval-summary-card[data-tone="bad"] {
+  border-color: var(--danger, #ff6259);
+}
+
+.eval-summary-value {
+  font-family: var(--font-display, sans-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text, #f3f4f5);
+}
+
+.eval-summary-label {
+  font-size: 12px;
+  color: var(--text-dim, #9a9ea6);
+  margin-top: 4px;
+}
+
+.eval-note {
+  font-size: 12.5px;
+  color: var(--text-faint, #5c6067);
+  margin: 0 0 32px;
+}
+
+.eval-note code {
+  font-family: var(--font-mono, monospace);
+}
+
+/* ---- case cards ---- */
+
+.eval-case-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eval-case-card {
+  border: 1px solid var(--border, #26292e);
+  border-radius: 10px;
+  padding: 16px;
+  background: var(--surface, #131416);
+}
+
+.eval-case-card[data-state="fail"] {
+  border-color: var(--danger, #ff6259);
+}
+
+.eval-case-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.eval-case-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.eval-case-badge[data-state="pass"] {
+  color: var(--accent, #00e6c8);
+  background: rgba(0, 230, 200, 0.1);
+}
+
+.eval-case-badge[data-state="fail"] {
+  color: var(--danger, #ff6259);
+  background: rgba(255, 98, 89, 0.1);
+}
+
+.eval-case-type {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint, #5c6067);
+}
+
+.eval-case-query {
+  font-family: var(--font-display, sans-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text, #f3f4f5);
+  margin: 0 0 4px;
+}
+
+.eval-case-detail {
+  font-size: 12.5px;
+  color: var(--text-dim, #9a9ea6);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .eval-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

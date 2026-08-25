@@ -1,0 +1,4 @@
+There is no changes made in the code to evaluate LLM. 
+just run
+uv run python evaluation/run_eval.py                # quick pass, 1 run each
+uv run python evaluation/run_eval.py --repeats 5     # measures consistency
