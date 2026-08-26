@@ -163,13 +163,13 @@ from token_usage import TokenUsageCallback
 app = FastAPI(title="Text-to-SQL Pipeline API")
 
 # IMPORTANT: keep this set to your actual deployed Vercel domain, e.g.
-# allow_origins=["https://datapilot-zeta.vercel.app"] — do NOT revert
+# allow_origins=["https://datapilot-dp.vercel.app"] — do NOT revert
 # to allow_origins=["*"]. This file doesn't know your current locked
 # value, so verify it's unchanged from your existing deployed api.py
 # before replacing that file with this one.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://datapilot-zeta.vercel.app"],  # <-- verify this matches your real domain
+    allow_origins=["https://datapilot-dp.vercel.app"],  # <-- verify this matches your real domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
