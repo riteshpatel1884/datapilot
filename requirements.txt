@@ -3,9 +3,10 @@ uvicorn[standard]
 pydantic
 python-dotenv
 sqlglot
+pandas
 langchain
 langchain-core
 langchain-groq
 langchain-qdrant
 qdrant-client
-pandas
+langsmith
