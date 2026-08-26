@@ -61,6 +61,7 @@
 #     uvicorn.run(app, host="0.0.0.0", port=8000)
 
 
+
 """
 FastAPI backend — thin HTTP layer over the existing pipeline.
 
@@ -80,6 +81,7 @@ exact same TokenUsageCallback (shared via token_usage.py, not
 duplicated) that the eval harness already used. Filter by tag in
 LangSmith to see production vs eval traffic separately.
 """
+import time
 import uuid
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -94,7 +96,7 @@ from token_usage import TokenUsageCallback
 app = FastAPI(title="Text-to-SQL Pipeline API")
 
 # IMPORTANT: keep this set to your actual deployed Vercel domain, e.g.
-# allow_origins=["https://datapilot-zeta.vercel.app"] — do NOT revert
+# allow_origins=["https://datapilot-dp.vercel.app"] — do NOT revert
 # to allow_origins=["*"]. This file doesn't know your current locked
 # value, so verify it's unchanged from your existing deployed api.py
 # before replacing that file with this one.
@@ -144,7 +146,22 @@ def query(req: QueryRequest):
         "callbacks": [token_callback],
     }
 
+    start_time = time.time()
     result = run_pipeline(req.query, selected_option=req.selected_option, run_config=run_config)
+    total_time_ms = round((time.time() - start_time) * 1000, 1)
+
+    # Attach live metrics directly to the response so the frontend can
+    # display them per-query, in real time, without needing LangSmith
+    # access at all — total latency always present; token/cost will be
+    # zero for guardrail-blocked queries, correctly, since those never
+    # reach an LLM call.
+    result["_metrics"] = {
+        "total_time_ms": total_time_ms,
+        "llm_calls": token_callback.llm_calls,
+        "input_tokens": token_callback.input_tokens,
+        "output_tokens": token_callback.output_tokens,
+        "estimated_cost_usd": round(token_callback.estimated_cost_usd(), 6),
+    }
 
     # Separate, lightweight log entry just for cost — doesn't touch or
     # duplicate pipeline.py's own per-stage logging, just correlates by
