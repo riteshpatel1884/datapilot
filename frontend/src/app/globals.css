@@ -1742,7 +1742,6 @@ code {
 }
 
 
-
 /* ===== /tracing page ===== */
 
 .tracing-page {
@@ -1753,6 +1752,83 @@ code {
 
 .tracing-header {
   margin-bottom: 28px;
+}
+
+/* ---- summary bar ---- */
+
+.tracing-summary {
+  border: 1px solid var(--border, #26292e);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--surface, #131416);
+  margin-bottom: 24px;
+}
+
+.tracing-summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 14px;
+}
+
+.tracing-summary-stat {
+  border-left: 2px solid var(--border-strong, #37393f);
+  padding-left: 10px;
+}
+
+.tracing-summary-stat[data-tone="pass"] {
+  border-left-color: var(--accent, #00e6c8);
+}
+
+.tracing-summary-stat[data-tone="fail"] {
+  border-left-color: var(--danger, #ff6259);
+}
+
+.tracing-summary-value {
+  font-family: var(--font-display, sans-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text, #f3f4f5);
+}
+
+.tracing-summary-label {
+  font-size: 11px;
+  color: var(--text-dim, #9a9ea6);
+  margin-top: 2px;
+}
+
+.tracing-block-breakdown {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border, #26292e);
+}
+
+.tracing-block-breakdown-title {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint, #5c6067);
+  margin: 0 0 8px;
+}
+
+.tracing-block-breakdown-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tracing-block-chip {
+  font-size: 12px;
+  color: var(--text-dim, #9a9ea6);
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--surface-raised, #1a1c1f);
+  border: 1px solid var(--border, #26292e);
+}
+
+.tracing-block-chip strong {
+  color: var(--danger, #ff6259);
+  margin-left: 4px;
 }
 
 .tracing-back-link {
@@ -1842,6 +1918,35 @@ code {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+.trace-row-badges {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.trace-category-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  color: var(--danger, #ff6259);
+  background: rgba(255, 98, 89, 0.08);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.trace-confidence-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 10.5px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--text-dim, #9a9ea6);
+  background: var(--surface-raised, #1a1c1f);
+}
+
+.trace-confidence-badge[data-level="low"] {
+  color: #e6b400;
 }
 
 .trace-status-badge {

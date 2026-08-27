@@ -1,5 +1,7 @@
 
 
+
+
 # """
 # Combined Pipeline (RAG + LangChain version) — wires every step together:
 
@@ -31,7 +33,7 @@
 # from logger import log_run
 
 
-# def run_pipeline(query: str, selected_option: str = None, run_config: dict = None) -> dict:
+# def run_pipeline(query: str, selected_option: str = None, run_config: dict = None, request_id: str = None) -> dict:
 #     """
 #     Returns one of three shapes:
 #       {"type": "error", "message": "..."}
@@ -42,8 +44,16 @@
 #     generator's LangChain .invoke() calls (tags/metadata/callbacks for
 #     LangSmith tracing + token usage tracking). Normal app usage via
 #     api.py never sets this, so production behavior is unchanged.
+
+#     request_id: optional. If the caller (api.py) already generated one
+#     for its own logging (e.g. the cost log entry), pass it in here so
+#     BOTH log lines for the same request share one ID — otherwise this
+#     function generates its own independently, and anything trying to
+#     correlate the two logs (like the /tracing page) can never match
+#     them up. Defaults to a fresh UUID if not provided, so direct calls
+#     (eval harness, __main__ block below) are unaffected.
 #     """
-#     request_id = str(uuid.uuid4())
+#     request_id = request_id or str(uuid.uuid4())
 #     start_time = time.time()
 #     log_entry = {"request_id": request_id, "raw_query": query, "selected_option": selected_option}
 
@@ -132,7 +142,6 @@
 #     print(r4)
 
 
-
 """
 Combined Pipeline (RAG + LangChain version) — wires every step together:
 
@@ -191,7 +200,12 @@ def run_pipeline(query: str, selected_option: str = None, run_config: dict = Non
     # --- Step 1: Input Guardrail ---
     guardrail_result = check_input(query)
     if not guardrail_result.passed:
-        log_entry.update({"stage_failed": "guardrail", "success": False, "error_type": guardrail_result.reason})
+        log_entry.update({
+            "stage_failed": "guardrail",
+            "success": False,
+            "error_type": guardrail_result.reason,
+            "block_category": guardrail_result.category,
+        })
         log_run(log_entry)
         return {"type": "error", "message": guardrail_result.reason}
 
