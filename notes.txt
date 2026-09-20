@@ -3,3 +3,7 @@ Project Structure
 -> Frontend: Vercel
 -> BAckend - railway
 -> Repo - Github
+
+
+
+uv run uvicorn api:app --reload

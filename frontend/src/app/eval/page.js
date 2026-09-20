@@ -23,29 +23,11 @@ export default function EvalPage() {
       </header>
 
       <section className="eval-summary">
-        <SummaryCard
-          value={`${EVAL_META.fullyPassing}/${EVAL_META.totalCases}`}
-          label="Fully passing"
-          tone="good"
-        />
-        <SummaryCard
-          value={EVAL_META.flaky}
-          label="Flaky (inconsistent across repeats)"
-          tone={EVAL_META.flaky > 0 ? "warn" : "good"}
-        />
-        <SummaryCard
-          value={EVAL_META.fullyFailing}
-          label="Fully failing"
-          tone={EVAL_META.fullyFailing > 0 ? "bad" : "good"}
-        />
-        <SummaryCard
-          value={`${EVAL_META.totalRuns} runs`}
-          label={`in ${EVAL_META.totalTimeSeconds}s`}
-          tone="neutral"
-        />
+        <SummaryCard value={`${EVAL_META.fullyPassing}/${EVAL_META.totalCases}`} label="Fully passing" tone="good" />
+        <SummaryCard value={EVAL_META.flaky} label="Flaky (inconsistent across repeats)" tone={EVAL_META.flaky > 0 ? "warn" : "good"} />
+        <SummaryCard value={EVAL_META.fullyFailing} label="Fully failing" tone={EVAL_META.fullyFailing > 0 ? "bad" : "good"} />
+        <SummaryCard value={`${EVAL_META.totalRuns} runs`} label={`in ${EVAL_META.totalTimeSeconds}s`} tone="neutral" />
       </section>
-
-     
 
       <section className="eval-case-list">
         {EVAL_CASES.map((c) => (

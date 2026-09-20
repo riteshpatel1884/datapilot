@@ -9,7 +9,7 @@ const NAV = [
   { href: "/docs", label: "Docs" },
   { href: "/about", label: "About" },
   { href: "/eval", label: "Evaluation" },
-  { href: "/tracing", label: "tracing" },
+ 
 ];
 
 export const STAGES = ["Guardrail", "Classify", "Generate", "Validate", "Execute", "Format"];
@@ -22,16 +22,8 @@ export function Header() {
   return (
     <header className="topbar">
       <Link href="/" className="brand">
-        <span className="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
-            <path d="M3 8.5 12 3l9 5.5-9 5.5-9-5.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M3 8.5V16l9 5 9-5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M12 13.5V21" stroke="currentColor" strokeWidth="1.5" />
-          </svg>
-        </span>
-        <span className="brand-word">
-          DataPilot
-        </span>
+        <span className="brand-mark" aria-hidden="true">DP</span>
+        <span className="brand-word">DataPilot</span>
       </Link>
 
       <nav className="nav" aria-label="Primary">
@@ -66,20 +58,19 @@ export function Header() {
 export function Footer() {
   return (
     <footer className="site-footer">
-      <span className="footer-trace" aria-hidden="true" />
-      <p>
-        A natural-language query pipeline over structured data. Every question is guarded, classified,
-        generated, validated, executed, and formatted — in that order, every time.
+      <p className="footer-lede">
+        A guarded, six-stage pipeline that turns plain-English questions into checkable SQL.
       </p>
+      <p className="footer-fine">Guardrail → Classify → Generate → Validate → Execute → Format, in that order, every time.</p>
     </footer>
   );
 }
 
 /**
- * The signature element: a literal trace of the six pipeline stages,
- * reused (in different densities) on every page — as a live animated
- * loop in the hero, as a static legend in the console rail, and as a
- * vertical spine down the About page.
+ * The signature element: a slim "progress thread" tracing the six
+ * pipeline stages, reused at different densities across the app — as
+ * a live animated loop in the hero, as a vertical legend in the
+ * console rail, and inline above every result card and doc example.
  */
 export function PipelineTrace({ orientation = "horizontal", animated = false, activeIndex = -1, failedIndex = -1, dense = false }) {
   return (
@@ -96,7 +87,7 @@ export function PipelineTrace({ orientation = "horizontal", animated = false, ac
         const state = isFailed ? "failed" : isDone ? "done" : "pending";
         return (
           <div className="trace-node" data-state={state} key={stage} style={{ "--i": i }}>
-            <span className="trace-dot" />
+            <span className="trace-tick" />
             <span className="trace-label">{stage}</span>
             {i < STAGES.length - 1 && <span className="trace-connector" data-state={state} />}
           </div>
