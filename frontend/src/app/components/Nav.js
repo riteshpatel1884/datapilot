@@ -7,8 +7,6 @@ import { useTheme } from "../theme.js";
 const NAV = [
   { href: "/", label: "Console" },
   { href: "/docs", label: "Docs" },
-  { href: "/about", label: "About" },
-  { href: "/eval", label: "Evaluation" },
  
 ];
 
