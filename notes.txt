@@ -5,5 +5,5 @@ Project Structure
 -> Repo - Github
 
 
-
+run
 uv run uvicorn api:app --reload
