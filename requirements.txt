@@ -10,3 +10,4 @@ langchain-groq
 langchain-qdrant
 qdrant-client
 langsmith
+sqlalchemy

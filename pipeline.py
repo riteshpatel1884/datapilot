@@ -1,7 +1,6 @@
 
 
 
-
 # """
 # Combined Pipeline (RAG + LangChain version) — wires every step together:
 
@@ -60,7 +59,12 @@
 #     # --- Step 1: Input Guardrail ---
 #     guardrail_result = check_input(query)
 #     if not guardrail_result.passed:
-#         log_entry.update({"stage_failed": "guardrail", "success": False, "error_type": guardrail_result.reason})
+#         log_entry.update({
+#             "stage_failed": "guardrail",
+#             "success": False,
+#             "error_type": guardrail_result.reason,
+#             "block_category": guardrail_result.category,
+#         })
 #         log_run(log_entry)
 #         return {"type": "error", "message": guardrail_result.reason}
 
@@ -142,6 +146,7 @@
 #     print(r4)
 
 
+
 """
 Combined Pipeline (RAG + LangChain version) — wires every step together:
 
@@ -159,6 +164,18 @@ eval case id (for filtering in LangSmith) and attach a token-usage
 callback (for local cost tracking) — without touching how api.py calls
 this function for real production traffic, which never sets run_config
 and behaves exactly as before.
+
+FIX (2026-09-20) — PostgreSQL connection support: added an optional
+`session_id` parameter, threaded through to the classifier, generator,
+validator, and executor. If session_id is given and that session is
+connected to a real PostgreSQL database (see db/connection_manager.py),
+every one of those stages transparently uses that database's schema
+and dialect instead of the demo SQLite one — the demo dataset stays
+exactly as it was and is still what runs when session_id is None or
+the session was never connected. Also: the "couldn't generate a query"
+error now includes gen_result.assumptions when present — previously
+that detail was computed but silently dropped, so every generator
+failure looked identical to the user regardless of actual cause.
 """
 import time
 import uuid
@@ -173,7 +190,8 @@ from formatter.result_formatter import format_result
 from logger import log_run
 
 
-def run_pipeline(query: str, selected_option: str = None, run_config: dict = None, request_id: str = None) -> dict:
+def run_pipeline(query: str, selected_option: str = None, run_config: dict = None,
+                  request_id: str = None, session_id: str = None) -> dict:
     """
     Returns one of three shapes:
       {"type": "error", "message": "..."}
@@ -192,10 +210,22 @@ def run_pipeline(query: str, selected_option: str = None, run_config: dict = Non
     correlate the two logs (like the /tracing page) can never match
     them up. Defaults to a fresh UUID if not provided, so direct calls
     (eval harness, __main__ block below) are unaffected.
+
+    session_id: optional. If given and that session is connected to a
+    real PostgreSQL database (via POST /db/connect), the classifier,
+    generator, validator, and executor all transparently use that
+    database's schema/dialect/connection instead of the demo one. Omit
+    this (or pass a session that's never connected) for the exact same
+    demo-SQLite behavior this function always had.
     """
     request_id = request_id or str(uuid.uuid4())
     start_time = time.time()
-    log_entry = {"request_id": request_id, "raw_query": query, "selected_option": selected_option}
+    log_entry = {
+        "request_id": request_id,
+        "raw_query": query,
+        "selected_option": selected_option,
+        "session_id": session_id,
+    }
 
     # --- Step 1: Input Guardrail ---
     guardrail_result = check_input(query)
@@ -210,7 +240,7 @@ def run_pipeline(query: str, selected_option: str = None, run_config: dict = Non
         return {"type": "error", "message": guardrail_result.reason}
 
     # --- Step 2: Ambiguity Classifier (RAG-informed) ---
-    classifier_result = classify(query, selected_option=selected_option, run_config=run_config)
+    classifier_result = classify(query, selected_option=selected_option, run_config=run_config, session_id=session_id)
     log_entry["clarify_triggered"] = classifier_result.status == "clarify"
 
     if classifier_result.status == "clarify":
@@ -225,18 +255,23 @@ def run_pipeline(query: str, selected_option: str = None, run_config: dict = Non
     resolved_intent = classifier_result.resolved_intent
 
     # --- Step 3: SQL Generator (RAG retrieval happens inside here) ---
-    gen_result = generate_sql(resolved_intent, run_config=run_config)
+    gen_result = generate_sql(resolved_intent, run_config=run_config, session_id=session_id)
     log_entry["generated_sql"] = gen_result.sql
     log_entry["generation_confidence"] = gen_result.confidence
 
     if not gen_result.sql:
-        log_entry.update({"stage_failed": "generator", "success": False, "error_type": "empty SQL generated"})
+        log_entry.update({"stage_failed": "generator", "success": False, "error_type": gen_result.assumptions or "empty SQL generated"})
         log_run(log_entry)
-        return {"type": "error", "message": "Couldn't generate a query for that — try rephrasing."}
+        detail = f" ({gen_result.assumptions})" if gen_result.assumptions else ""
+        return {"type": "error", "message": f"Couldn't generate a query for that — try rephrasing.{detail}"}
 
     # --- Step 4: SQL Validator (validate against FULL ground-truth schema) ---
-    full_schema = get_full_schema()
-    validation_result = validate_sql(gen_result.sql, full_schema)
+    full_schema = get_full_schema(session_id=session_id)
+    dialect = "sqlite"
+    if session_id:
+        from db.connection_manager import get_dialect
+        dialect = get_dialect(session_id)
+    validation_result = validate_sql(gen_result.sql, full_schema, dialect=dialect)
     log_entry["validation_passed"] = validation_result.is_valid
     log_entry["validation_reason"] = validation_result.reason
 
@@ -246,7 +281,7 @@ def run_pipeline(query: str, selected_option: str = None, run_config: dict = Non
         return {"type": "error", "message": f"That query didn't pass safety checks: {validation_result.reason}"}
 
     # --- Step 5: Execution ---
-    exec_result = execute_query(validation_result.sql)
+    exec_result = execute_query(validation_result.sql, session_id=session_id)
     log_entry["execution_time_ms"] = exec_result.execution_time_ms
     log_entry["row_count_returned"] = len(exec_result.rows)
 
