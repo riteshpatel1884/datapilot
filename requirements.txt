@@ -11,3 +11,4 @@ langchain-qdrant
 qdrant-client
 langsmith
 sqlalchemy
+psycopg2-binary
