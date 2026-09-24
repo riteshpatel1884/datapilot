@@ -41,34 +41,7 @@ Every question — safe or malicious, clear or ambiguous — travels the same
 six-stage path. Nothing reaches the database without passing every gate
 before it.
 
-```mermaid
-flowchart TD
-    A["User question"] --> B{"1 · Guardrail"}
-    B -- "blocked: injection,\ndestructive intent,\njailbreak, off-topic" --> Z1["❌ Rejected\n(zero LLM calls)"]
-    B -- "passed" --> C{"2 · Classify"}
-    C -- "ambiguous" --> D["Ask user to clarify\n(options or free text)"]
-    D --> C
-    C -- "resolved" --> E["3 · Generate SQL\n(RAG-grounded, via Groq)"]
-    E -- "no confident SQL" --> Z2["❌ Couldn't generate a query"]
-    E -- "SQL produced" --> F{"4 · Validate\n(AST via sqlglot)"}
-    F -- "write op / unknown table\nor column / too complex" --> Z3["❌ Rejected before execution"]
-    F -- "passed" --> G["5 · Execute\n(read-only, against SQLite)"]
-    G -- "runtime error" --> Z4["❌ Execution failed"]
-    G -- "success" --> H["6 · Format result"]
-    H --> I["✅ Answer + table + SQL used"]
-
-    style B fill:#0d9488,color:#fff
-    style C fill:#0d9488,color:#fff
-    style E fill:#0d9488,color:#fff
-    style F fill:#0d9488,color:#fff
-    style G fill:#0d9488,color:#fff
-    style H fill:#0d9488,color:#fff
-    style Z1 fill:#b91c1c,color:#fff
-    style Z2 fill:#b91c1c,color:#fff
-    style Z3 fill:#b91c1c,color:#fff
-    style Z4 fill:#b91c1c,color:#fff
-    style I fill:#15803d,color:#fff
-```
+<img width="1236" height="895" alt="Project Workflow Overview" src="https://github.com/user-attachments/assets/1f683531-14ce-495d-af4d-f667553282e5" />
 
 ### RAG layer — what actually gets embedded
 
