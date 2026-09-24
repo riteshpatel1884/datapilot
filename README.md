@@ -35,11 +35,12 @@ the best. That approach has three problems this project deliberately solves:
 
 ## Architecture
 
-### Request pipeline
+### l1 - Overall Structure
 
-Every question — safe or malicious, clear or ambiguous — travels the same
-six-stage path. Nothing reaches the database without passing every gate
-before it.
+<img width="1174" height="640" alt="Redesigned Workflow Overview" src="https://github.com/user-attachments/assets/eb957f45-b6e1-4db4-a9fc-ef4178e122f9" />
+
+### L2 - pipeline
+
 
 <img width="1236" height="895" alt="Project Workflow Overview" src="https://github.com/user-attachments/assets/1f683531-14ce-495d-af4d-f667553282e5" />
 
