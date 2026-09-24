@@ -35,7 +35,7 @@ the best. That approach has three problems this project deliberately solves:
 
 ## Architecture
 
-### l1 - Overall Structure
+### L1 - Overall Structure
 
 <img width="1174" height="640" alt="Redesigned Workflow Overview" src="https://github.com/user-attachments/assets/eb957f45-b6e1-4db4-a9fc-ef4178e122f9" />
 
