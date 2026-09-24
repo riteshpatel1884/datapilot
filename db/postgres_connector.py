@@ -35,7 +35,7 @@ import re
 import time
 from urllib.parse import quote_plus
 
-from sqlalchemy import create_engine, inspect, text
+from sqlalchemy import create_engine, event, inspect, text
 from sqlalchemy.engine import Engine
 from sqlalchemy.exc import SQLAlchemyError
 
@@ -85,8 +85,32 @@ def _make_engine(url: str) -> Engine:
         pool_pre_ping=True,
         pool_size=3,
         max_overflow=2,
-        connect_args={"options": f"-c statement_timeout={STATEMENT_TIMEOUT_MS}"},
     )
+
+    # statement_timeout is set here as a normal SET command on every new
+    # connection, NOT via the connection string's `options` startup
+    # parameter (connect_args={"options": "-c statement_timeout=..."}).
+    # That approach breaks against Neon's (and any PgBouncer-fronted)
+    # POOLED connection endpoint — PgBouncer rejects unrecognized
+    # startup packet parameters outright with "unsupported startup
+    # parameter". A plain SET issued after connecting is just a normal
+    # query as far as the pooler is concerned, so it works against both
+    # pooled and direct/unpooled endpoints.
+    @event.listens_for(engine, "connect")
+    def _set_statement_timeout(dbapi_connection, connection_record):
+        cursor = dbapi_connection.cursor()
+        cursor.execute(f"SET statement_timeout = {STATEMENT_TIMEOUT_MS}")
+        cursor.close()
+        # Commit right away so no transaction is left open on the raw
+        # connection — SQLAlchemy's own postgresql_readonly handling
+        # (via psycopg2's set_session()) runs immediately after this
+        # same "connect" event and requires an idle connection; leaving
+        # this SET's implicit transaction open blocks it with
+        # "set_session cannot be used inside a transaction". SET itself
+        # is session-scoped in Postgres, so committing here doesn't
+        # undo it — it just closes the empty transaction around it.
+        dbapi_connection.commit()
+
     # Forces every connection from this engine to be read-only at the
     # driver level — this is layer 1 of defense-in-depth, independent
     # of the SQL validator and independent of whatever role the DB user
