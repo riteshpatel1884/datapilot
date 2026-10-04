@@ -52,10 +52,72 @@ def _rows_equal(actual_rows, expected_rows, float_tol=0.01) -> bool:
     return True
 
 
-def evaluate_case(case: dict, result: dict) -> dict:
+def _row_contains_values(actual_row, expected_values, float_tol=0.01) -> bool:
+    """
+    True if every value in `expected_values` can be matched to some
+    value in `actual_row` (each actual value used at most once).
+    Order-independent, and tolerant of `actual_row` having MORE values
+    (extra columns) than `expected_values` — that's exactly the
+    "correct answer, extra real columns" pattern v1's strict
+    comparison was penalizing.
+    """
+    remaining = list(actual_row)
+    for ev in expected_values:
+        match_idx = None
+        for i, av in enumerate(remaining):
+            if isinstance(ev, float) or isinstance(av, float):
+                try:
+                    if math.isclose(float(av), float(ev), abs_tol=float_tol):
+                        match_idx = i
+                        break
+                except (TypeError, ValueError):
+                    pass
+            if str(av) == str(ev):
+                match_idx = i
+                break
+        if match_idx is None:
+            return False
+        remaining.pop(match_idx)
+    return True
+
+
+def _rows_subset_match(expected_rows, actual_rows) -> bool:
+    """
+    Lenient row comparison: still requires the SAME NUMBER of rows
+    (so a genuinely wrong row count — like a missing filter — still
+    fails), but each expected row just needs to be a value-subset of
+    some actual row, matched order-independently across rows too.
+    """
+    if len(expected_rows) != len(actual_rows):
+        return False
+    remaining_actual = list(actual_rows)
+    for erow in expected_rows:
+        match_idx = None
+        for i, arow in enumerate(remaining_actual):
+            if _row_contains_values(arow, list(erow)):
+                match_idx = i
+                break
+        if match_idx is None:
+            return False
+        remaining_actual.pop(match_idx)
+    return True
+
+
+def evaluate_case(case: dict, result: dict, lenient: bool = False) -> dict:
     """
     Returns {"passed": bool, "detail": str} for one (case, pipeline
     result) pair. `result` is whatever run_pipeline() returned.
+
+    lenient: False (default) preserves the ORIGINAL strict exact-match
+    behavior — eval_dataset.py / run_eval.py call this without the
+    argument, so nothing about the existing 18-case suite changes.
+    lenient=True (used by run_execution_accuracy.py's v2 mode) uses
+    _rows_subset_match instead of _rows_equal: it still requires the
+    correct row COUNT and correct underlying VALUES, but tolerates the
+    pipeline returning additional correct columns beyond exactly what
+    the hand-written ground truth SQL selected. See v1_baseline.md for
+    why this distinction matters — v1's strict scoring conflated
+    "wrong answer" with "correct answer, extra real detail."
     """
     expected = case["expected_type"]
     actual_type = result.get("type")
@@ -80,8 +142,13 @@ def evaluate_case(case: dict, result: dict) -> dict:
             return {"passed": False, "detail": f"ground_truth_sql itself failed: {gt.error}"}
 
         actual_rows = [tuple(row.values()) for row in result.get("table", [])]
-        if _rows_equal(actual_rows, gt.rows):
-            return {"passed": True, "detail": "matches ground truth"}
+        # NOTE argument order for the lenient path: ground truth FIRST
+        # (the "expected" rows that must each be contained), pipeline
+        # output SECOND (the rows allowed to carry extra columns).
+        rows_match = _rows_subset_match(gt.rows, actual_rows) if lenient else _rows_equal(actual_rows, gt.rows)
+        if rows_match:
+            detail = "matches ground truth (lenient: subset match)" if lenient else "matches ground truth"
+            return {"passed": True, "detail": detail}
         return {
             "passed": False,
             "detail": f"mismatch — got {actual_rows[:3]}..., expected {gt.rows[:3]}...",

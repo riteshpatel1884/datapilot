@@ -7,3 +7,6 @@ Project Structure
 
 run for backend
 uv run uvicorn api:app --reload
+
+
+should we do one thing like makeing another version and keep this older evalution so that we van say that accuracy inc from thisn to that by chaning pipeline
