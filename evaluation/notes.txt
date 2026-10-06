@@ -79,7 +79,7 @@ Total runs         : 90
 Passed             : 69
 Failed             : 21
 
->>> EXECUTION ACCURACY: 76.7% (69/90) <<<
+>>> EXECUTION ACCURACY: 76.7% (69/90) 
 
 ------------------------------------------------------------------------
 21 case(s) had at least one failing run:
